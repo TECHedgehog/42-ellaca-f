@@ -1,0 +1,6 @@
+Credentials cache: API:4715
+        Principal: ellaca-f@42MADRID.COM
+
+  Issued                Expires               Principal
+Oct  1 08:35:46 2019  Oct  1 18:35:46 2019  krbtgt/42MADRID.COM@42MADRID.COM
+Oct  1 08:35:47 2019  Oct  1 18:35:46 2019  HTTP/student-storage.42madrid.com@42MADRID.COM
