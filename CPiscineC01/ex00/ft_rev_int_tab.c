@@ -1,25 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 21:36:08 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/03 21:57:04 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/08 13:27:59 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/08 19:59:44 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_numbers(void)
+void	ft_rev_int_tab(int *tab, int size)
 {
-	int digito;
+	int count;
+	int looplimit;
+	int aux;
 
-	digito = 0;
-	while (digito <= 9)
+	count = 0;
+	looplimit = size;
+	while (looplimit > count)
 	{
-		write(1, &digito, 1);
-		digito++;
+		aux = *(tab + count);
+		*(tab + count) = *(tab + size - 1 - count);
+		*(tab + size - 1 - count) = aux;
+		looplimit--;
+		count++;
 	}
 }

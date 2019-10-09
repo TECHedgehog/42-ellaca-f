@@ -1,25 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 17:47:02 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/08 20:36:48 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/04 14:24:18 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/08 19:56:35 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_print_alphabet(void)
+void	ft_ultimate_div_mod(int *a, int *b)
 {
-	char letra;
+	int a2;
+	int b2;
 
-	letra = 'a';
-	while (letra <= 'z')
-	{
-		write(1, &letra, 1);
-		letra++;
-	}
+	a2 = *a;
+	b2 = *b;
+	*a = a2 / b2;
+	*b = a2 % b2;
 }

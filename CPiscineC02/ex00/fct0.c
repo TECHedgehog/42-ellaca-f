@@ -1,25 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   fct0.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 17:47:02 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/08 20:36:48 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/09 20:08:23 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/09 20:09:28 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
-{
-	char letra;
+char	*ft_strcpy(char *dest, char *src);
 
-	letra = 'a';
-	while (letra <= 'z')
-	{
-		write(1, &letra, 1);
-		letra++;
-	}
+int main()
+{
+
 }

@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/03 17:47:02 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/08 20:36:48 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/08 12:40:58 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/08 19:19:23 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_print_alphabet(void)
+int		ft_strlen(char *str)
 {
-	char letra;
+	int counter;
 
-	letra = 'a';
-	while (letra <= 'z')
+	counter = 0;
+	while (*str != '\0')
 	{
-		write(1, &letra, 1);
-		letra++;
+		str = str + 1;
+		counter++;
 	}
+	return (counter);
 }

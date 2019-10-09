@@ -1,22 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_ultimate_div_mod.c                              :+:      :+:    :+:   */
+/*   ft_rev_int_tab.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/04 14:24:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/08 10:49:48 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/08 13:27:59 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/08 19:28:08 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-void	ft_ultimate_div_mod(int *a, int *b)
-{
-	int a2;
-	int b2;
+#include <unistd.h>
 
-	a2 = *a;
-	b2 = *b;
-	*a = a2 / b2;
-	*b = a2 % b2;
+void	ft_rev_int_tab(int *tab, int size)
+{
+	int count;
+	int looplimit;
+	int aux;
+
+	count = 0;
+	looplimit = size;
+	while (looplimit > count)
+	{
+		aux = *(tab + count);
+		*(tab + count) = *(tab + size - 1 - count);
+		*(tab + size - 1 - count) = aux;
+		looplimit--;
+		count++;
+	}
 }
