@@ -1,26 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   fct0.c                                             :+:      :+:    :+:   */
+/*   ft_strupcase.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 20:08:23 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/10 04:20:07 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/10 10:17:29 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/10 10:30:29 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strcpy(char *dest, char *src);
-
-int main()
+char	*ft_strupcase(char *str)
 {
-	char *dest;
-	char *src;
+	int i;
 
-	src = "Hola como estamos?";
-	write(1, &*(ft_strcpy(dest, src)), 50);
-
-	return (0);
+	i = 0;
+	while (*(str + i) != '\0')
+	{
+		if (*(str + i) >= 'a' && *(str + i) <= 'z')
+			*(str + i) = *(str + i) - 32;
+		i++;
+	}
+	return (str);
 }

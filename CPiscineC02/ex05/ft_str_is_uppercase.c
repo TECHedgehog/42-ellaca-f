@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_str_is_uppercase.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 20:07:28 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/10 05:16:35 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/10 10:00:40 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/10 10:05:56 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+int		ft_str_is_uppercase(char *str)
 {
 	int i;
+	int flag;
 
 	i = 0;
-	while (*(src + i) != '\0')
+	flag = 1;
+	while (*(str + i) != '\0' && flag != 0)
 	{
-		*(dest + i) = *(src + i);
+		if (*(str + i) >= 'A' && *(str + i) <= 'Z')
+			flag = 1;
+		else
+			flag = 0;
 		i++;
 	}
-	*(dest + i) = '\0';
-	return (dest);
+	return (flag);
 }

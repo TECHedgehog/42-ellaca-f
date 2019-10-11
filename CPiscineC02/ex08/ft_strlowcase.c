@@ -1,28 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strlowcase.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 20:07:28 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/10 05:16:35 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/10 10:31:03 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/10 10:35:05 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strlowcase(char *str)
 {
 	int i;
 
 	i = 0;
-	while (*(src + i) != '\0')
+	while (*(str + i) != '\0')
 	{
-		*(dest + i) = *(src + i);
+		if (*(str + i) >= 'A' && *(str + i) <= 'Z')
+			*(str + i) = *(str + i) + 32;
 		i++;
 	}
-	*(dest + i) = '\0';
-	return (dest);
+	return (str);
 }
