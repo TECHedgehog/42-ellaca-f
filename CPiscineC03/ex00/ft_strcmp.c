@@ -1,27 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strupcase.c                                     :+:      :+:    :+:   */
+/*   ft_strcmp.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 10:17:29 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/10 10:30:29 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/14 19:31:04 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/14 19:53:50 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char	*ft_strupcase(char *str)
+int	ft_strcmp(char *s1, char *s2)
 {
 	int i;
 
 	i = 0;
-	while (*(str + i) != '\0')
+	while (s1[i] != '\0')
 	{
-		if (*(str + i) >= 'a' && *(str + i) <= 'z')
-			*(str + i) = *(str + i) - 32;
+		if (s1[i] != s2[i])
+		{
+			return (s1[i] - s2[i]);
+		}
 		i++;
 	}
-	return (str);
+	return (0);
 }

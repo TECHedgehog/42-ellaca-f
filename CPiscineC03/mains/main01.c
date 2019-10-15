@@ -1,32 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncpy.c                                       :+:      :+:    :+:   */
+/*   main01.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/10 04:25:59 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/11 12:32:49 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/14 19:32:50 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/14 19:54:06 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 #include <stdio.h>
+#include <string.h>
 
-char	*ft_strncpy(char *dest, char *src, unsigned int n)
+int ft_strcmp(char *s1, char *s2);
+
+int main()
 {
-	unsigned int i;
+	char s1[] = "abc(j";
+	char s2[] = "abcDe";
 
-	i = 0;
-	while (*(src + i) != '\0')
-	{
-		while (i <= n)
-		{
-			*(dest + i) = *(src + i);
-			i++;
-		}
-		*(dest + i) = '\0';
-		i++;
-	}
-	return (dest);
+	printf("%d\n", strcmp(s1, s2));
+	printf("%i\n", ft_strcmp(s1, s2));
+	return (0);
 }
