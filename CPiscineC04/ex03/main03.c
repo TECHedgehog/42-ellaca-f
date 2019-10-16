@@ -1,32 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   main03.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 08:49:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/15 13:21:49 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/16 20:37:10 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/17 01:21:25 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+int	ft_atoi(char *str);
+
+int main()
 {
-	unsigned int i;
-	unsigned int j;
+	char str[] = "			-+---------+--648721548sd563";
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (j < nb)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	printf("%d\n", ft_atoi(str));
+	return (0);
 }

@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   main04.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 08:49:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/15 13:21:49 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/15 14:11:09 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/15 14:30:01 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
+#include <stdio.h>
+#include <string.h>
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+char *ft_strstr(char *str, char *to_find);
+
+int main()
 {
-	unsigned int i;
-	unsigned int j;
+	char str[] = "holaComoEstamos";
+	char to_find[] = "";
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (j < nb)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	printf("%s\n", ft_strstr(str, to_find));
+	return (0);
 }

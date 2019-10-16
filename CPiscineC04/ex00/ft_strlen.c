@@ -1,32 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strlen.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 08:49:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/15 13:21:49 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/08 12:40:58 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/08 19:19:23 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
+int		ft_strlen(char *str)
 {
-	unsigned int i;
-	unsigned int j;
+	int counter;
 
-	i = 0;
-	j = 0;
-	while (dest[i])
-		i++;
-	while (j < nb)
+	counter = 0;
+	while (*str != '\0')
 	{
-		dest[i] = src[j];
-		i++;
-		j++;
+		str = str + 1;
+		counter++;
 	}
-	dest[i] = '\0';
-	return (dest);
+	return (counter);
 }

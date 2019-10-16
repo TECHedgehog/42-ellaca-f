@@ -1,32 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strncat.c                                       :+:      :+:    :+:   */
+/*   ft_strstr_2.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 08:49:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/15 13:21:49 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/15 13:26:26 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/15 14:36:32 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-char *ft_strncat(char *dest, char *src, unsigned int nb)
-{
+char *ft_strstr(char *str, char *to_find)
+{	
 	unsigned int i;
 	unsigned int j;
+	char *c;
 
 	i = 0;
 	j = 0;
-	while (dest[i])
-		i++;
-	while (j < nb)
-	{
-		dest[i] = src[j];
-		i++;
-		j++;
-	}
-	dest[i] = '\0';
-	return (dest);
+	if (to_find[0] == '\0')
+		return (str);
+	else
+		while (str[i] != '\0' && to_find[j] != '\0')
+		{
+			if (str[i] == to_find[j])
+			{
+				if (str[i] == to_find[0])
+					*c = str[i];
+				j++;
+			}
+			else
+				j = 0;
+			i++;
+		}
+	return (c);
 }

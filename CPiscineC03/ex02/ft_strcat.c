@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 04:47:56 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/15 08:53:04 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/10/15 13:21:47 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,14 @@ char	*ft_strcat(char *dest, char *src)
 
 	i = 0;
 	j = 0;
-	while (src[j])
-		j++;
 	while (dest[i])
-	{
-		src[j] = dest[i];
-		j++;
 		i++;
+	while (src[j])
+	{
+		dest[i] = src[j];
+		i++;
+		j++;
 	}
-	src[j] = '\0';
-	return (src);
+	dest[i] = '\0';
+	return (dest);
 }
