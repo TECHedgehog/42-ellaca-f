@@ -1,27 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main04.c                                           :+:      :+:    :+:   */
+/*   ft_recursive_power.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/15 14:11:09 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/17 05:17:34 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/17 10:44:31 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/17 10:55:44 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
-#include <string.h>
-
-char *ft_strstr(char *str, char *to_find);
-
-int main()
+int	ft_recursive_power(int nb, int power)
 {
-	char str[] = "sdg";
-	char to_find[] = "d";
-
-	printf("%s\n", ft_strstr(str, to_find));
-	printf("%s\n", strstr(str, to_find));
-	return (0);
+	if (nb < 0)
+		return (0);
+	if (power > 0)
+		return (nb * ft_recursive_power(nb, power - 1));
+	return (1);
 }

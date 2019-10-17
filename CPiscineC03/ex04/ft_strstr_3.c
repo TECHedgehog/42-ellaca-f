@@ -6,52 +6,47 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/15 11:20:23 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/17 05:23:48 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/10/15 12:22:38 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-int	strlen_cmp(char *str, char *to_find)
+char	*ft_strstr(char *str, char *to_find)
 {
-	int			i;
-	int			j;
-
-	i = 0;
-	j = 0;
-	while (str[i])
-		i++;
-	while (to_find[j])
-		j++;
-	if (i < j)
-		return (1);
-	return (0);
-}
-
-char *ft_strstr(char *str, char *to_find)
-{
+	char *found;
 	unsigned int i;
 	unsigned int j;
+	unsigned int aux[3];
 
+	aux[0] = 0;
+	aux[1] = 0;
+	aux[2] = 0;
 	i = 0;
 	j = 0;
-	if (strlen_cmp(str, to_find))
-		return (0);
-	if (str[0] == '\0')
-		return (0);
-	if (to_find[0] == '\0')
-		return (str);
-	while (str[i] != '\0')
+	while (to_find[j])
+		j++;
+	while (str[i])
 	{
-		j = 0;
-		if (str[i] == to_find[j])
+		aux[0] = 0;
+		if (to_find[aux[0]] == str[i])
 		{
-			while (str[i + j] == to_find[j] && to_find[j] != '\0')
-				j++;
-			if (to_find[j] == '\0')
-				return (&str[i]);
+			str[i] = *found;
+			aux[1] = i;
+			aux[2] = 0;
+			while (aux[0] <= j && to_find[aux[0]] == str[aux[1]])
+			{
+				aux[2] = 1;
+				aux[1]++;
+				aux[0]++;
+			}
+			if (aux[2] == 1)
+				return (found);
 		}
+		else if (to_find[0] == '\0')
+			found = str;
+		else
+			found = 0;
 		i++;
 	}
-	return (0);
 }
