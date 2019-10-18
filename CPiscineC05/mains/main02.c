@@ -1,33 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   main02.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 09:17:28 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/18 10:07:06 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/17 10:32:17 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/17 11:02:43 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
-{
-	int n;
-	int aux;
-	int i;
+#include <stdio.h>
 
-	n = nb;
-	aux = nb;
-	i = 0;
-	if (nb == 0)
-		return (1);
-	if (nb < 0)
-		return (0);
-	while (aux > 1)
-	{
-		aux = aux - 1;
-		n *= aux;
-		i++;
-	}
-	return (n);
+int	ft_iterative_power(int nb, int power);
+
+int main()
+{
+	int nb = 2;
+	int power = 5;
+
+	printf("%d\n", ft_iterative_power(nb, power));
+	return (0);
 }
