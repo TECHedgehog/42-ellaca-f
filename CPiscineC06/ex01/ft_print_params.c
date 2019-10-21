@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_print_params.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 11:10:35 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/18 12:57:15 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/18 11:17:00 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/18 12:58:37 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,19 +17,25 @@ void	ft_puststr(char *str)
 	int i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (str[i] != 0)
 	{
 		write(1, &str[i], 1);
+		write(1, "\n", 2);
 		i++;
 	}
 }
 
 int		main(int argc, char **argv)
 {
-	char *str;
+	char	*str;
+	int		j;
 
-	(void)argc;
-	str = argv[0];
-	ft_puststr(str);
+	j = 1;
+	while (j < argc)
+	{
+		str = argv[j];
+		ft_puststr(str);
+		j++;
+	}
 	return (0);
 }

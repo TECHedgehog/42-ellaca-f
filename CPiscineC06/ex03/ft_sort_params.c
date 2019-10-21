@@ -1,18 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_program_name.c                            :+:      :+:    :+:   */
+/*   ft_sort_params.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/18 11:10:35 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/18 12:57:15 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/18 11:48:08 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/18 12:26:35 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
 
-void	ft_puststr(char *str)
+void	ft_putstr(char *str)
 {
 	int i;
 
@@ -20,16 +20,50 @@ void	ft_puststr(char *str)
 	while (str[i] != '\0')
 	{
 		write(1, &str[i], 1);
+		write(1, "\n", 2);
 		i++;
 	}
 }
 
+int		ft_strcmp(char *str1, char *str2)
+{
+	int k;
+
+	k = 0;
+	while (str1[k] != '\0')
+	{
+		if (str1[k] != str2[k])
+			return (str1[k] - str2[k]);
+		k++;
+	}
+	return (0);
+}
+
 int		main(int argc, char **argv)
 {
-	char *str;
+	int		j;
+	char	*aux;
+	int		aux1;
 
-	(void)argc;
-	str = argv[0];
-	ft_puststr(str);
+	aux1 = 0;
+	j = 0;
+	while (++j < argc - 1)
+	{
+		if (ft_strcmp(argv[j], argv[j + 1]) > 0)
+		{
+			aux = argv[j];
+			argv[j] = argv[j + 1];
+			argv[j + 1] = aux;
+			aux1++;
+		}
+		if (aux1 == 1)
+		{
+			j = 0;
+			aux1 = 0;
+		}
+	}
+	j = 0;
+	while (++j < argc)
+		ft_putstr(argv[j]);
 	return (0);
 }
