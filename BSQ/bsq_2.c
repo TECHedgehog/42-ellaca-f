@@ -6,7 +6,7 @@
 /*   By: lcanales <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/10/21 18:40:04 by lcanales          #+#    #+#             */
-/*   Updated: 2019/10/22 18:38:41 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/10/22 18:39:57 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,54 +18,35 @@
 int		count_column(char *newfile);
 int		num_param(char *line_1);
 
-/*int		arc_tester(char **tabletop, int x, int y)
-{
-	int flag;
-	int k;
-	int i;
-	int j;
-
-	j = x;
-	k = 0;
-	i = y;
-	flag = 1;
-	while (flag == 1)
-	{
-		while (k )
-		{
-			if (tabletop_num[i + k][j + k] * tabletop_num[][] == 0)
-				flag = 0;
-			i--;
-		}
-		k++;
-	}
-	return (0);
-}*/
-
-/*void	bsqminas(char **tabletop_num, int x, int y)
+void	bsqminas(int **tabletop_num, int x, int y)
 {
 	int i;
 	int j;
-	int k;
-	int h;
-	int max;
 
-	i = 0;
-	j = 0;
-	k = 0;
-	h = 0;
+	i = 1;
+	j = 1;
+	//printf("%d ", tabletop_num[y][])
 	while (i < y)
 	{
-		while (j < x)
+		while (j < x-1)
 		{
-			arc_tester(tabletop_num, j, i);
+			if (tabletop_num[i][j] != 0)
+			{
+				if ((tabletop_num[i][j-1] <= tabletop_num[i-1][j-1]) && tabletop_num[i][j-1] <= tabletop_num[i-1][j])
+						tabletop_num[i][j] = tabletop_num[i][j]+ tabletop_num[i][j-1];
+				else if ((tabletop_num[i-1][j-1] <= tabletop_num[i][j-1]) && tabletop_num[i-1][j-1] <= tabletop_num[i-1][j])
+						tabletop_num[i][j] = tabletop_num[i][j]+ tabletop_num[i-1][j-1];
+				else if ((tabletop_num[i-1][j] <= tabletop_num[i][j-1]) && tabletop_num[i-1][j] <= tabletop_num[i-1][j-1])
+						tabletop_num[i][j] = tabletop_num[i][j]+ tabletop_num[i-1][j];
+			}
+			//printf("%d ", tabletop_num[i][j]);	
 			j++;
 		}
-		k = 0;
+		j = 1;
 		i++;
-		j = 0;
+		//printf("\n");
 	}
-}*/
+}
 
 char	*dict_in_str(char *plantilla, int file, int b)
 {
@@ -91,7 +72,7 @@ char	*dict_in_str(char *plantilla, int file, int b)
 	return (strdict);
 }
 
-char	**ft_tabletop(int y, char *newfile, char *line_1, char *params)
+void	ft_tabletop(int y, char *newfile, char *line_1, char *params)
 {
 	int		i;
 	int		h;
@@ -125,13 +106,12 @@ char	**ft_tabletop(int y, char *newfile, char *line_1, char *params)
 			tabletop[i][h] = newfile[j];
 			j++;
 			//write(1, &tabletop[i][h], 1);
-			printf("%i", tabletop_num[i][h]);
+			printf("%i ", tabletop_num[i][h]);
 		}
 		printf("\n");
 		h = -1;
 	}
-			printf("%c\n", params[1]);
-	return (tabletop);
+	bsqminas(tabletop_num, x, y);
 }
 
 int		count_column(char *newfile)
