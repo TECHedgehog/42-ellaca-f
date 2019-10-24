@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/09 20:07:28 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/24 02:51:25 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/24 02:50:29 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/24 02:59:52 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <stdio.h>
+#include <stdlib.h>
 
-char	*ft_strcpy(char *dest, char *src)
+char	*ft_strdup(char *src)
 {
-	int i;
+	int		i;
+	char	*dest;
 
 	i = 0;
-	while (*(src + i) != '\0')
+	while (src[i])
+		i++;
+	dest = malloc(i + 1);
+	i = 0;
+	while (src[i] != '\0')
 	{
-		*(dest + i) = *(src + i);
+		dest[i] = src[i];
 		i++;
 	}
-	*(dest + i) = '\0';
+	dest[i] = '\0';
 	return (dest);
 }
