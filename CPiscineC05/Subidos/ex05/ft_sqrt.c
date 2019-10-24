@@ -1,30 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_iterative_factorial.c                           :+:      :+:    :+:   */
+/*   ft_sqrt.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/10/17 09:17:28 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/10/24 02:39:27 by ellaca-f         ###   ########.fr       */
+/*   Created: 2019/10/23 20:48:41 by ellaca-f          #+#    #+#             */
+/*   Updated: 2019/10/24 02:33:50 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_iterative_factorial(int nb)
+int	ft_sqrt(int nb)
 {
-	int n;
-	int aux;
+	int a;
+	int sqrt;
 
-	n = nb;
-	aux = nb;
-	if (nb == 0)
-		return (1);
+	a = 0;
 	if (nb < 0)
 		return (0);
-	while (aux > 1)
+	while (a < 46341)
 	{
-		aux = aux - 1;
-		n *= aux;
+		sqrt = a * a;
+		if (sqrt == nb)
+			return (a);
+		a++;
 	}
-	return (n);
+	return (0);
 }
