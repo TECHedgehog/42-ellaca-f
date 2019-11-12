@@ -3,17 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:44:54 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/07 17:43:28 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/12 10:51:47 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
-
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+char *ft_substr(char const *s, unsigned int start, size_t len);
 
 int		ft_isit(char const *set, char c)
 {
@@ -45,4 +42,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (ft_isit(set, s1[i]))
 		i--;
 	return (ft_substr(s1, start, i - start + 1));
+}
+
+int main()
+{
+	printf("%s\n", ft_strtrim("slkdjfholjsdaaldkdjf", "slkdjf"));
 }

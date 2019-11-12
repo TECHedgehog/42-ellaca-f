@@ -1,0 +1,42 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2019/11/07 23:01:10 by marvin            #+#    #+#             */
+/*   Updated: 2019/11/07 23:01:10 by marvin           ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+void	ft_putnbr_fd(int n, int fd)
+{
+	long int nb;
+	long int nb2;
+	long int exp;
+	char c;
+
+	exp = 1;
+	c = 0;
+	nb = (n < 0) ? (long)n * -1 : (long)n;
+	nb2 = (long)n;
+	while (nb > 0 || nb2 == 0)
+	{	
+		nb /= 10;
+		exp *= 10;
+		nb2++;
+	}
+	if (n < 0)
+		write(fd, "-", 1);
+	nb = (n < 0) ? (long)n * -1 : (long)n;
+	exp /= 10;
+	while (exp > 0)
+	{
+		c = nb / exp % 10 + 48;
+		exp /= 10;
+		write(fd, &c, 1);
+	}
+}
