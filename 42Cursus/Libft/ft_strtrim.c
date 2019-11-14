@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:44:54 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/12 14:00:20 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/14 20:51:14 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	unsigned int	start;
 	int				ctrl;
 
+	if (s1 == 0)
+		return (NULL);
 	i = 0;
 	k = 0;
 	start = 0;
@@ -42,7 +44,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	while (s1[k++])
 		i++;
 	k -= 2;
-	while (ft_isit(set, s1[k--]))
+	while (ft_isit(set, s1[k--]) && k > start)
 		i--;
+	if (k <= start)
+		return (ft_strdup(""));
 	return (ft_substr(s1, start, i));
 }

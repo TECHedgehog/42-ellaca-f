@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:45:57 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/11 17:17:29 by marvin           ###   ########.fr       */
+/*   Updated: 2019/11/14 21:03:01 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-
-char	*ft_substr(char const *s, unsigned int start, size_t len);
+#include "libft.h"
 
 char	**ft_split(char const *s, char c)
 {
@@ -43,14 +41,4 @@ char	**ft_split(char const *s, char c)
 		i = j;
 	}
 	return (newstr);
-}
-
-int main()
-{
-	int i = 0;
-
-	while (i++ < 4)
-	{
-		printf("%s\n", ft_split("abcccdefgchicj", 'c')[i]);
-	}
 }

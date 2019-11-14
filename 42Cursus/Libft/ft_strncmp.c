@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 12:10:00 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/05 12:17:58 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/14 19:24:18 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	int i;
+	size_t i;
 
 	i = 0;
 	while ((s1[i] != '\0' || s2[i] != '\0') && i < n)
