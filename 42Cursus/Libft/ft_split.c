@@ -6,11 +6,13 @@
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 17:45:57 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/12 16:19:38 by marvin           ###   ########.fr       */
+/*   Updated: 2019/11/11 17:17:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include <stdlib.h>
+
+char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 char	**ft_split(char const *s, char c)
 {
@@ -37,8 +39,18 @@ char	**ft_split(char const *s, char c)
 		j = 0;
 		while (s[j] != c)
 			j++;
-		ft_substr(newstr[l++], i, j);
+		ft_substr(newstr[l++], i, j - i);
 		i = j;
 	}
 	return (newstr);
+}
+
+int main()
+{
+	int i = 0;
+
+	while (i++ < 4)
+	{
+		printf("%s\n", ft_split("abcccdefgchicj", 'c')[i]);
+	}
 }

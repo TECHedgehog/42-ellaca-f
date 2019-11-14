@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:44:54 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/12 10:51:47 by marvin           ###   ########.fr       */
+/*   Updated: 2019/11/12 14:00:20 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *ft_substr(char const *s, unsigned int start, size_t len);
+#include "libft.h"
 
 int		ft_isit(char const *set, char c)
 {
@@ -19,7 +19,7 @@ int		ft_isit(char const *set, char c)
 	i = 0;
 	while (set[i])
 	{
-		if (c == set[i])
+		if (c == set[i++])
 			return (1);
 	}
 	return (0);
@@ -28,23 +28,21 @@ int		ft_isit(char const *set, char c)
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t			i;
+	size_t			k;
 	unsigned int	start;
 	int				ctrl;
 
 	i = 0;
+	k = 0;
 	start = 0;
 	ctrl = 1;
 	while (ft_isit(set, s1[start]))
 		start++;
-	i = start;
-	while (s1[i])
+	k = start;
+	while (s1[k++])
 		i++;
-	while (ft_isit(set, s1[i]))
+	k -= 2;
+	while (ft_isit(set, s1[k--]))
 		i--;
-	return (ft_substr(s1, start, i - start + 1));
-}
-
-int main()
-{
-	printf("%s\n", ft_strtrim("slkdjfholjsdaaldkdjf", "slkdjf"));
+	return (ft_substr(s1, start, i));
 }
