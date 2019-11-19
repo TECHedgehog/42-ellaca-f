@@ -6,11 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 14:03:41 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/05 11:01:17 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/19 11:18:33 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 {
@@ -24,7 +24,7 @@ void	*ft_memccpy(void *dst, const void *src, int c, size_t n)
 	while (n > 0)
 	{
 		str1[i] = str2[i];
-		if (str2[i] == c)
+		if (str2[i] == (unsigned char)c)
 			return (&dst[i + 1]);
 		i++;
 		n--;

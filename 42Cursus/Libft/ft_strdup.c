@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:02:36 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/05 16:13:02 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/19 12:56:02 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ char	*ft_strdup(const char *s1)
 	while (s1[i])
 		i++;
 	dst = malloc(i + 1);
+	if (!dst)
+		return (0);
 	i = 0;
 	while (s1[i] != '\0')
 	{
