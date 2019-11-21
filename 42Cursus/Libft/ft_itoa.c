@@ -6,25 +6,24 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 12:41:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/12 12:41:51 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:35:48 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
-char	*ft_itoa(int n)
+char	*ft_itoa(int nb)
 {
-	int		j;
-	int		l;
-	char	*num;
+	int			j;
+	long int	l;
+	long int	n;
+	char		*num;
 
+	n = nb;
 	j = (n > 0) ? 0 : 1;
 	l = (n < 0) ? n * -1 : n;
 	while (l > 0)
-	{
-		l /= 10;
-		j++;
-	}
+		l = j++ ? l / 10 : l / 10;
 	l = (n < 0) ? n * -1 : n;
 	num = malloc(j + 1);
 	if (!num)
@@ -34,8 +33,7 @@ char	*ft_itoa(int n)
 	while (l > 0)
 	{
 		num[j - 1] = l % 10 + 48;
-		l /= 10;
-		j--;
+		l = j-- ? l / 10 : l / 10;
 	}
 	(n < 0) ? num[0] = '-' : 0;
 	return (num);

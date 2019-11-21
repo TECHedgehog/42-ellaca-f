@@ -6,11 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/04 13:10:06 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/05 11:02:56 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:35:58 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

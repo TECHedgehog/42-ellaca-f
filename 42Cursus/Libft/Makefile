@@ -6,7 +6,7 @@
 #    By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/14 18:44:13 by ellaca-f          #+#    #+#              #
-#    Updated: 2019/11/14 21:03:32 by ellaca-f         ###   ########.fr        #
+#    Updated: 2019/11/21 18:32:12 by ellaca-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,7 +32,7 @@ ft_strncmp.c ft_atoi.c \
 ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 ft_toupper.c ft_tolower.c \
 ft_strmapi.c ft_strjoin.c ft_substr.c \
-ft_strtrim.c \
+ft_strtrim.c ft_split.c \
 ft_itoa.c ft_calloc.c \
 ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c ft_putchar_fd.c \
 

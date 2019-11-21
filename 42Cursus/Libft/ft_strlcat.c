@@ -6,11 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 12:43:07 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/19 14:07:03 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 21:17:58 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
@@ -23,7 +23,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 	j = 0;
 	k = 0;
 	l = 0;
-	while (dst[i])
+	while (dst[i] && i < dstsize)
 		i++;
 	l = i;
 	while (src[k])

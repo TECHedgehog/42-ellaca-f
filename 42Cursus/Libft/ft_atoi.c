@@ -6,11 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:42:25 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/05 14:05:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:35:12 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_isspace(char *str, int i)
+static int	ft_isspace(char *str, int i)
 {
 	if (str[i] == '\t' || str[i] == '\n' || str[i] == '\v' ||
 		str[i] == '\f' || str[i] == '\r' || str[i] == ' ')
@@ -18,7 +18,7 @@ int	ft_isspace(char *str, int i)
 	return (0);
 }
 
-int	ft_atoi(const char *str)
+int			ft_atoi(const char *str)
 {
 	unsigned int	i;
 	unsigned int	signcount;
@@ -31,11 +31,10 @@ int	ft_atoi(const char *str)
 	signcount = 0;
 	while (ft_isspace((char*)str, i))
 		i++;
-	if (str[i] == '-')
-	{
-		flag = 1;
+	while (str[i] == '+' && str[i + 1] >= '0' && str[i + 1] <= '9')
 		i++;
-	}
+	if (str[i] == '-')
+		flag = i++ ? 1 : 1;
 	while (str[i] >= '0' && str[i] <= '9')
 	{
 		nb *= 10;

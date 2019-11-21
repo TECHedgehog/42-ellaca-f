@@ -6,11 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 16:02:36 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/19 12:56:02 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:39:11 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strdup(const char *s1)
 {

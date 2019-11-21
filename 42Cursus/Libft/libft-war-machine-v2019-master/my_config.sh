@@ -5,7 +5,7 @@
 ###################################
 
 #Edit the next line with the path of your libft project.
-PATH_LIBFT=/Users/ellaca-f/Documents/42Cursus/Libft
+PATH_LIBFT=/Users/ellaca-f/Documents/42Cursus/Libft/
 
 #If you use a relative path, don't put double quotes.
 #For example :

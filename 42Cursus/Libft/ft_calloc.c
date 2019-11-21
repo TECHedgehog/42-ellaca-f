@@ -6,12 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:48:45 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/14 20:58:20 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:36:07 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
-#include <stddef.h>
+#include "libft.h"
 
 void	*ft_calloc(size_t count, size_t size)
 {

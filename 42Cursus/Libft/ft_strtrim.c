@@ -6,13 +6,13 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:44:54 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/14 20:51:14 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:40:14 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_isit(char const *set, char c)
+static int	ft_isit(char const *set, char c)
 {
 	int i;
 
@@ -25,7 +25,7 @@ int		ft_isit(char const *set, char c)
 	return (0);
 }
 
-char	*ft_strtrim(char const *s1, char const *set)
+char		*ft_strtrim(char const *s1, char const *set)
 {
 	size_t			i;
 	size_t			k;

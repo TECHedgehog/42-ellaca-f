@@ -6,11 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:04:32 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/05 11:09:42 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:39:37 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stddef.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

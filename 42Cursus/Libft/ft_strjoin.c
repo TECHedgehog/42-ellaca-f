@@ -6,11 +6,11 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/07 13:11:45 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/19 14:55:49 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2019/11/21 20:39:16 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
+#include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
 {
