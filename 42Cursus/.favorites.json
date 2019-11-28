@@ -1,0 +1,18 @@
+[
+    {
+        "type": "Group",
+        "name": "Docs",
+        "parent_id": null,
+        "workspaceRoot": null,
+        "workspacePath": null,
+        "id": "uqXgv5IbMA2YGhV9"
+    },
+    {
+        "type": "Directory",
+        "name": "/Users/ellaca-f/Documents/42Cursus/Subjects",
+        "parent_id": "uqXgv5IbMA2YGhV9",
+        "workspaceRoot": "/Users/ellaca-f/Documents/42Cursus",
+        "workspacePath": "Subjects",
+        "id": "N3WYLVzdG6yM1Dcf"
+    }
+]
