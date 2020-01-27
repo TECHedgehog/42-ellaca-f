@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 18:13:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 18:02:33 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,7 @@ int		get_next_line(int fd, char **line)
 	str = ft_strnew(BUFFER_SIZE);
 	if ((bites_read = reader(&line[0], fd, &leftover, str)) == -1)
 		return (-1);
+	free(leftover);
 	free(str);
 	if (bites_read == 0 && ft_strlen(line[0]) == 0)
 		return (0);

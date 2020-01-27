@@ -6,14 +6,13 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 11:22:54 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 14:34:53 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:25:29 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <fcntl.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <unistd.h>
@@ -26,6 +25,5 @@ size_t	ft_strlen(const char *s);
 char	*ft_strjoin(char const *s1, char const *s2);
 char	*ft_substr(char const *s, unsigned int start, size_t len);
 char	*ft_strnew(size_t size);
-void	*ft_calloc(size_t count, size_t size);
 
 #endif

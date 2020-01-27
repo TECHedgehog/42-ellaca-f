@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 18:13:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:59:33 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnew(size_t size)
 
 	i = 0;
 	str = NULL;
-	str = (char *)malloc(size * sizeof(char *) + 1);
+	str = (char *)malloc(size * sizeof(*str) + 1);
 	if (str == NULL)
 		return (NULL);
 	while (i < size)
@@ -33,7 +33,18 @@ char	*ft_strnew(size_t size)
 
 char	*ft_strchr(const char *s, int c)
 {
-	char	*str;
+  int 	i;
+	if ((char)c == '\0')
+		return ((char*)s + ft_strlen(s));
+	i = 0;
+	while (s[i])
+    {
+        if (s[i] == (char)c)
+            return ((char*)s + i);
+        i++;
+    }
+    return (NULL);
+	/*char	*str;
 	int		i;
 
 	str = (char *)s;
@@ -46,7 +57,7 @@ char	*ft_strchr(const char *s, int c)
 	}
 	if (s[i] == c)
 		return (&str[i]);
-	return (0);
+	return (0);*/
 }
 
 int		recycle_bin(char **leftover, char **line)
@@ -97,7 +108,7 @@ int		reader(char **line, int fd, char **leftover, char *str)
 int		get_next_line(int fd, char **line)
 {
 	int			bites_read;
-	char		*str;
+	char		*str = NULL;
 	static char	*leftover;
 
 	if (line == NULL || fd < 0 || BUFFER_SIZE <= 0)
@@ -106,7 +117,6 @@ int		get_next_line(int fd, char **line)
 	if (leftover != NULL)
 		if (recycle_bin(&leftover, &line[0]))
 			return (1);
-	str = ft_strnew(BUFFER_SIZE);
 	if ((bites_read = reader(&line[0], fd, &leftover, str)) == -1)
 		return (-1);
 	free(str);

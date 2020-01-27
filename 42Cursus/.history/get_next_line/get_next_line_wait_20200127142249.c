@@ -1,35 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*   get_next_line_wait.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 18:13:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:22:49 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
-
-char	*ft_strnew(size_t size)
-{
-	char			*str;
-	size_t			i;
-
-	i = 0;
-	str = NULL;
-	str = (char *)malloc(size * sizeof(char *) + 1);
-	if (str == NULL)
-		return (NULL);
-	while (i < size)
-	{
-		str[i] = '\0';
-		i++;
-	}
-	str[size] = '\0';
-	return (str);
-}
 
 char	*ft_strchr(const char *s, int c)
 {
@@ -71,9 +52,9 @@ int		reader(char **line, int fd, char **leftover, char *str)
 	int			len;
 	int			bites_read;
 
-	while ((bites_read = read(fd, str, BUFFER_SIZE)))
+	while((bites_read = read(fd, str, BUFFER_SIZE)))
 	{
-		if (bites_read == -1)
+		if(bites_read == -1)
 			return (bites_read);
 		str[bites_read] = '\0';
 		temp = ft_strdup(line[0]);
@@ -86,7 +67,7 @@ int		reader(char **line, int fd, char **leftover, char *str)
 			*leftover = ft_strdup(ft_strchr(line[0], '\n') + 1);
 			temp = strdup(line[0]);
 			free(line[0]);
-			line[0] = ft_substr(temp, 0, len);
+			line[0] = ft_strsub(temp, 0, len);
 			free(temp);
 			break ;
 		}
@@ -99,14 +80,13 @@ int		get_next_line(int fd, char **line)
 	int			bites_read;
 	char		*str;
 	static char	*leftover;
-
+	
 	if (line == NULL || fd < 0 || BUFFER_SIZE <= 0)
 		return (-1);
 	line[0] = ft_strnew(BUFFER_SIZE);
 	if (leftover != NULL)
 		if (recycle_bin(&leftover, &line[0]))
 			return (1);
-	str = ft_strnew(BUFFER_SIZE);
 	if ((bites_read = reader(&line[0], fd, &leftover, str)) == -1)
 		return (-1);
 	free(str);

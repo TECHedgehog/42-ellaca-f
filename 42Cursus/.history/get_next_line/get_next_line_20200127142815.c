@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 18:13:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:28:15 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnew(size_t size)
 
 	i = 0;
 	str = NULL;
-	str = (char *)malloc(size * sizeof(char *) + 1);
+	str = (char *)malloc(size * sizeof(*str) + 1);
 	if (str == NULL)
 		return (NULL);
 	while (i < size)
@@ -106,7 +106,6 @@ int		get_next_line(int fd, char **line)
 	if (leftover != NULL)
 		if (recycle_bin(&leftover, &line[0]))
 			return (1);
-	str = ft_strnew(BUFFER_SIZE);
 	if ((bites_read = reader(&line[0], fd, &leftover, str)) == -1)
 		return (-1);
 	free(str);

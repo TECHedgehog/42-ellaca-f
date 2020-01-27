@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 18:13:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 17:39:45 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strnew(size_t size)
 
 	i = 0;
 	str = NULL;
-	str = (char *)malloc(size * sizeof(char *) + 1);
+	str = (char *)malloc(size * sizeof(*str) + 1);
 	if (str == NULL)
 		return (NULL);
 	while (i < size)
@@ -61,6 +61,7 @@ int		recycle_bin(char **leftover, char **line)
 		return (1);
 	}
 	line[0] = ft_strdup(*leftover);
+	free(*leftover);
 	*leftover = NULL;
 	return (0);
 }

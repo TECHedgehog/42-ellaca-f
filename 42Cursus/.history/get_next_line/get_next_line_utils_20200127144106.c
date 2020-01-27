@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 11:22:52 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 17:43:45 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:41:06 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,7 +74,23 @@ char	*ft_strjoin(char const *s1, char const *s2)
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
+	 size_t    i;
+    char    *str;
+
+    i = 0;
+    if (s == NULL)
+        return (NULL);
+    str = (char *)malloc(sizeof(*str) * (len + 1));
+    if (str == NULL)
+        return (NULL);
+    while (i < len)
+    {
+        str[i] = s[start + i];
+        i++;
+    }
+    str[i] = '\0';
+    return (str);
+	/*unsigned int	i;
 	char			*newstr;
 
 	if (s == NULL)
@@ -90,7 +106,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	newstr[len] = '\0';
 	while (len-- > 0)
 		newstr[i++] = s[start++];
-	return (newstr);
+	return (newstr);*/
 }
 
 void	*ft_calloc(size_t count, size_t size)

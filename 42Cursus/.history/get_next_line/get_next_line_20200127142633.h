@@ -6,14 +6,13 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 11:22:54 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/01/27 14:34:53 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/01/27 14:26:33 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 
-# include <fcntl.h>
 # include <stddef.h>
 # include <stdio.h>
 # include <unistd.h>
