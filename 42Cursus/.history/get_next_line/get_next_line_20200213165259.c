@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/13 17:21:46 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/13 16:52:59 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ char	*ft_strnew(size_t size)
 	i = 0;
 	str = NULL;
 	str = (char *)malloc(size * sizeof(char *) + 1);
+	printf("23, %p\n", str);
 	if (str == NULL)
 		return (NULL);
 	while (i < size)
@@ -77,16 +78,20 @@ int		reader(char **line, int fd, char **leftover, char *str)
 			return (bites_read);
 		str[bites_read] = '\0';
 		temp = ft_strdup(line[0]);
+		printf("81, free %p\n", line[0]);
 		free(line[0]);
 		line[0] = ft_strjoin(temp, str);
+		printf("83, free %p\n", temp);
 		free(temp);
 		if (ft_strchr(line[0], '\n'))
 		{
 			len = ft_strchr(line[0], '\n') - line[0];
 			*leftover = ft_strdup(ft_strchr(line[0], '\n') + 1);
 			temp = strdup(line[0]);
+			printf("89, free %p\n", line[0]);
 			free(line[0]);
 			line[0] = ft_substr(temp, 0, len);
+			printf("91, free %p\n", temp);
 			free(temp);
 			break ;
 		}
@@ -101,7 +106,7 @@ int		get_next_line(int fd, char **line)
 	static char	*leftover;
 
 	if (line == NULL || fd < 0 || BUFFER_SIZE <= 0)
-		return (-1);	
+		return (-1);
 	line[0] = ft_strnew(BUFFER_SIZE);
 	if (leftover != NULL)
 		if (recycle_bin(&leftover, &line[0]))
@@ -109,6 +114,7 @@ int		get_next_line(int fd, char **line)
 	str = ft_strnew(BUFFER_SIZE);
 	if ((bites_read = reader(&line[0], fd, &leftover, str)) == -1)
 		return (-1);
+	printf("113, free %p\n", str);
 	free(str);
 	if (bites_read == 0 && ft_strlen(line[0]) == 0)
 		return (0);

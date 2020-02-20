@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 11:22:52 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/13 17:22:13 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/13 16:53:05 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ char	*ft_strdup(const char *s1)
 	while (s1[i])
 		i++;
 	dst = malloc(i + 1);
+	printf("24 %p\n", dst);
 	if (!dst)
 		return (0);
 	i = 0;
@@ -62,6 +63,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i[3] = i[0] + i[1];
 	if (!(newstr = malloc(i[3] + 1)))
 		return (0);
+	printf("66 %p\n", newstr);	
 	i[1] = 0;
 	while (i[3]-- >= 0)
 	{
@@ -87,6 +89,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!(newstr = malloc(len + 1)))
 		return (0);
+	printf("92 %p\n", newstr);
 	newstr[len] = '\0';
 	while (len-- > 0)
 		newstr[i++] = s[start++];
@@ -100,6 +103,7 @@ void	*ft_calloc(size_t count, size_t size)
 
 	i = 0;
 	s = malloc(count * size);
+	printf("106 %p\n", s);
 	if (s != 0)
 	{
 		while (i < count * size)

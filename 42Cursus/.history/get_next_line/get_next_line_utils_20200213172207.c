@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/28 11:22:52 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/13 17:22:13 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/13 17:22:07 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	i[2] = i[0];
 	i[3] = i[0] + i[1];
 	if (!(newstr = malloc(i[3] + 1)))
-		return (0);
+		return (0);	
 	i[1] = 0;
 	while (i[3]-- >= 0)
 	{

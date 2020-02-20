@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/13 17:21:46 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/13 12:38:57 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ int		reader(char **line, int fd, char **leftover, char *str)
 			free(line[0]);
 			line[0] = ft_substr(temp, 0, len);
 			free(temp);
-			break ;
+			break;
 		}
 	}
 	return (bites_read);
@@ -101,7 +101,7 @@ int		get_next_line(int fd, char **line)
 	static char	*leftover;
 
 	if (line == NULL || fd < 0 || BUFFER_SIZE <= 0)
-		return (-1);	
+		return (-1);
 	line[0] = ft_strnew(BUFFER_SIZE);
 	if (leftover != NULL)
 		if (recycle_bin(&leftover, &line[0]))
