@@ -1,23 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tab_reinitializer.c                                :+:      :+:    :+:   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 10:59:01 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/20 16:24:49 by ellaca-f         ###   ########.fr       */
+/*   Created: 2020/01/30 17:08:38 by ellaca-f          #+#    #+#             */
+/*   Updated: 2020/02/20 12:00:08 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "libft.h"
 
-t_tab	*tab_reinitializer(t_tab *tab)
+int		ft_printf(const char *formats, ...)
 {
-	tab->flag_minus = 0;
-	tab->flag_zero = 0;
-	tab->flag_precision = 0;
-	tab->flag_star = 0;
-	tab->flag_width = 0;
-	return (tab);
+	t_tab *tab;
+
+	if (!(tab = (t_tab*)malloc(sizeof(t_tab))))
+		return (-1);
+	tab->formats = formats;
+	tab = tab_initializer(tab);
+	if (formats)
+	{
+		va_start(tab->punt_arg, formats);
+		tab->len = processor(tab);
+		va_end(tab->punt_arg);
+	}
+	free(tab);
+	return (tab->len);
 }

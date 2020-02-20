@@ -6,12 +6,12 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 17:08:38 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/20 11:02:02 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/20 18:47:58 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "libft.h"
+#include "Libft/libft.h"
 
 int		ft_printf(const char *formats, ...)
 {
@@ -24,9 +24,18 @@ int		ft_printf(const char *formats, ...)
 	if (formats)
 	{
 		va_start(tab->punt_arg, formats);
-		tab->len = ;
+		tab->len = processor(tab);
 		va_end(tab->punt_arg);
 	}
 	free(tab);
 	return (tab->len);
+}
+
+int main (void)
+{
+	//ft_printf("hola");
+	printf("%d\n", ft_printf("hola que "));
+	//printf("\n");
+	//printf("%d\n", printf("%05d", 23));
+	return (0);
 }

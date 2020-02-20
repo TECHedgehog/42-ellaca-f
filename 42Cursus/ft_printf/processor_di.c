@@ -1,23 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tab_reinitializer.c                                :+:      :+:    :+:   */
+/*   processor_di.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/02/13 10:59:01 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/20 16:24:49 by ellaca-f         ###   ########.fr       */
+/*   Created: 2020/02/20 16:28:17 by ellaca-f          #+#    #+#             */
+/*   Updated: 2020/02/20 18:43:19 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include "Libft/libft.h"
 
-t_tab	*tab_reinitializer(t_tab *tab)
+void	processor_di(t_tab *tab)
 {
-	tab->flag_minus = 0;
-	tab->flag_zero = 0;
-	tab->flag_precision = 0;
-	tab->flag_star = 0;
-	tab->flag_width = 0;
-	return (tab);
+	printf("%d", va_arg(tab->punt_arg, int));
 }

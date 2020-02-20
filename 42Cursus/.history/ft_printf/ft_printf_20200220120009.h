@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:47:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/20 18:38:23 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/20 12:00:08 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,28 +30,12 @@ typedef struct	s_tab
 	int			len;
 	size_t		i;
 	char		*specifiers;
-	char		*punt_spec;
 	char		*flags;
-	int			flag_minus;
-	int			flag_zero;
-	int			flag_precision;
-	int			flag_star;
-	int			flag_width;
 }				t_tab;
 
 int				ft_printf(const char *formats, ...);
 t_tab			*tab_initializer(t_tab *tab);
 t_tab			*tab_reinitializer(t_tab *tab);
 int				processor(t_tab *tab);
-t_tab			*processor_flags(t_tab *tab);
-t_tab			*processor_specs(t_tab *tab);
-void			processor_di(t_tab *tab);
-/*
-void			processor_x(t_tab *tab);
-void			processor_c(t_tab *tab);
-void			processor_s(t_tab *tab);
-void			processor_p(t_tab *tab);
-void			processor_u(t_tab *tab);*/
-//int				printer(char *s);
 
 #endif
