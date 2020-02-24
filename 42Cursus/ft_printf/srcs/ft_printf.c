@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 17:08:38 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/24 20:44:02 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/25 00:32:07 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include "Libft/libft.h"
+#include "libft.h"
 
 int		ft_printf(const char *formats, ...)
 {
