@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/27 12:04:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/13 17:21:46 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/24 21:27:20 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,15 +52,19 @@ char	*ft_strchr(const char *s, int c)
 int		recycle_bin(char **leftover, char **line)
 {
 	int			len;
+	char		*tmp;
 
 	if (ft_strchr(*leftover, '\n') != NULL)
 	{
 		len = ft_strchr(*leftover, '\n') - *leftover;
 		line[0] = ft_substr(*leftover, 0, len);
-		*leftover = ft_strchr(*leftover, '\n') + 1;
+		tmp = ft_strdup(ft_strchr(*leftover, '\n') + 1);
+		free(*leftover);
+		*leftover = tmp;
 		return (1);
 	}
 	line[0] = ft_strdup(*leftover);
+	free(*leftover);
 	*leftover = NULL;
 	return (0);
 }
@@ -101,16 +105,21 @@ int		get_next_line(int fd, char **line)
 	static char	*leftover;
 
 	if (line == NULL || fd < 0 || BUFFER_SIZE <= 0)
-		return (-1);	
+		return (-1);
 	line[0] = ft_strnew(BUFFER_SIZE);
 	if (leftover != NULL)
+	{
+		free(line[0]);
 		if (recycle_bin(&leftover, &line[0]))
+		{
 			return (1);
+		}
+	}
 	str = ft_strnew(BUFFER_SIZE);
 	if ((bites_read = reader(&line[0], fd, &leftover, str)) == -1)
 		return (-1);
 	free(str);
-	if (bites_read == 0 && ft_strlen(line[0]) == 0)
+	if (bites_read == 0 && ft_strchr(line[0], '\n') == NULL)
 		return (0);
 	return (1);
 }
