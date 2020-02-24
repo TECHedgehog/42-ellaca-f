@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:47:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/20 18:38:23 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:44:28 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct	s_tab
 	va_list		punt_arg;
 	int			len;
 	size_t		i;
+	size_t		j;
 	char		*specifiers;
 	char		*punt_spec;
 	char		*flags;
@@ -42,10 +43,11 @@ typedef struct	s_tab
 int				ft_printf(const char *formats, ...);
 t_tab			*tab_initializer(t_tab *tab);
 t_tab			*tab_reinitializer(t_tab *tab);
-int				processor(t_tab *tab);
+t_tab			*processor(t_tab *tab);
 t_tab			*processor_flags(t_tab *tab);
 t_tab			*processor_specs(t_tab *tab);
-void			processor_di(t_tab *tab);
+char			*processor_di(t_tab *tab);
+t_tab			*printer(char *str, t_tab *tab);
 /*
 void			processor_x(t_tab *tab);
 void			processor_c(t_tab *tab);

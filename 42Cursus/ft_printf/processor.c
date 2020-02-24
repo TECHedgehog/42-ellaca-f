@@ -6,14 +6,14 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 11:53:24 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/20 18:42:20 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/24 20:44:15 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-int		processor(t_tab *tab)
+t_tab		*processor(t_tab *tab)
 {
 	while (tab->formats[tab->i] && tab->i <= ft_strlen(tab->formats))
 	{
@@ -39,5 +39,5 @@ int		processor(t_tab *tab)
 		tab_reinitializer(tab);
 		tab->i++;
 	}
-	return (tab->len);
+	return (tab);
 }

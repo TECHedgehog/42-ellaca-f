@@ -1,42 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*   printer.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/01/30 17:08:38 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/24 20:44:02 by ellaca-f         ###   ########.fr       */
+/*   Created: 2020/02/24 18:51:57 by ellaca-f          #+#    #+#             */
+/*   Updated: 2020/02/24 20:45:18 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-int		ft_printf(const char *formats, ...)
+t_tab	*printer(char *str, t_tab *tab)
 {
-	t_tab *tab;
+	int i;
 
-	if (!(tab = (t_tab*)malloc(sizeof(t_tab))))
-		return (-1);
-	tab->formats = formats;
-	tab = tab_initializer(tab);
-	if (formats)
+	i = 0;
+	while (str[i])
 	{
-		va_start(tab->punt_arg, formats);
-		processor(tab);
-		va_end(tab->punt_arg);
+		write(1, &str[i], 1);
+		tab->len++;
+		i++;
 	}
-	free(tab);
-	return (tab->len);
-}
-
-int main (void)
-{
-	//ft_printf("hola");
-	int i = 123;
-	printf("%d\n", ft_printf("%d", i));
-	//printf("\n");
-	//printf("%d\n", printf("%05d", 23));
-	return (0);
+	return (tab);
 }
