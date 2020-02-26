@@ -32,6 +32,9 @@
 			"**/.history": true,
 			"**/.vscode": true
 		},
-		"explorerExclude.backup": null
+		"explorerExclude.backup": null,
+		"files.associations": {
+			"libft.h": "c"
+		}
 	}
 }
