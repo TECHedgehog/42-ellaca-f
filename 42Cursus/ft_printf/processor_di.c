@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   processor_di.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:28:17 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/24 20:53:00 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/02/26 09:36:29 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 char	*processor_di(t_tab *tab)
 {
 	char		*str;
-	int			n;
+	long		n;
 	long int	nb[2];
 	long int	exp;
 
@@ -47,11 +47,13 @@ char	*processor_di(t_tab *tab)
 	}
 	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
 	exp /= 10;
+	tab->j = 0;
 	while (exp > 0)
 	{
 		str[tab->j] = nb[0] / exp % 10 + 48;
 		exp /= 10;
 		tab->j++;
 	}
+	//printf("%s\n", str);
 	return (str);
 }
