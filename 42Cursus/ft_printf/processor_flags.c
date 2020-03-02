@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:06:26 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/20 18:38:19 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/03/02 10:22:05 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,13 +19,13 @@ t_tab	*processor_flags(t_tab *tab)
 
 	i = 0;
 	if (tab->formats[tab->i] == tab->flags[0])
-		tab->flag_minus = 1;
+		tab->flag_minus = tab->i;
 	else if (tab->formats[tab->i] == tab->flags[1])
-		tab->flag_zero = 1;
+		tab->flag_zero = tab->i;
 	else if (tab->formats[tab->i] == tab->flags[2])
-		tab->flag_precision = 1;
+		tab->flag_precision = tab->i;
 	else if (tab->formats[tab->i] == tab->flags[3])
-		tab->flag_star = 1;
+		tab->flag_star = tab->i;
 	else if (tab->formats[tab->i] >= '1' &&
 			tab->formats[tab->i] <= '9')
 	{
