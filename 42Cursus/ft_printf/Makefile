@@ -30,6 +30,7 @@ CFILE =		ft_printf.c \
 			processor_specs.c \
 			processor_di.c \
 			printer.c \
+			f_width_treatment.c \
 
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 

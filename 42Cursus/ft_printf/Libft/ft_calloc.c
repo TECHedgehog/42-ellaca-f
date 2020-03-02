@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 15:48:45 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/21 20:36:07 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/03/02 13:54:47 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	*ft_calloc(size_t count, size_t size)
 	{
 		while (i < count * size)
 		{
-			s[i] = 0;
+			s[i] = '\0';
 			i++;
 		}
 		return (s);

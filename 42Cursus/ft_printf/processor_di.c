@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:28:17 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 10:13:12 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/03/02 12:01:34 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,6 +52,7 @@ char	*processor_di(t_tab *tab)
 	long int	exp;
 
 	exp = 1;
+	k = 0;
 	n = va_arg(tab->punt_arg, int);
 	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
 	nb[1] = (long)nb[0];

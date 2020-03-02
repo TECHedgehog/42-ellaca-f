@@ -1,7 +1,7 @@
 #include "../ft_printf.h"
 int main()
 {
-	printf("%.d\n", 33);
+	printf("%1i\n", -33);
 	// char *f = "hola1234";
 	// int i = 0;
 	

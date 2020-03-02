@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:12:45 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/02/24 20:41:13 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/03/02 17:35:12 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ t_tab	*processor_specs(t_tab *tab)
 	else if (tab->formats[tab->i] == 'p')
 		processor_p(tab);
 	else if (tab->formats[tab->i] == 'u')
-		processor_u(tab);
+		processor_u(tab);*/
 	else if (tab->formats[tab->i] == '%')
-		printer("%");*/
+		printer("%", tab);
 	tab->i++;
 	return (tab);
 }

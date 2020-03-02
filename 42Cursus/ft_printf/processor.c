@@ -6,12 +6,18 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 11:53:24 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 10:42:45 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/03/02 18:04:07 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
+
+void		writer(t_tab *tab)
+{
+	write(1, &tab->formats[tab->i++], 1);
+	tab->len++;
+}
 
 t_tab		*processor(t_tab *tab)
 {
@@ -26,20 +32,15 @@ t_tab		*processor(t_tab *tab)
 			while (ft_strchr(tab->specifiers, tab->formats[tab->i])
 					&& tab->formats[tab->i])
 				processor_specs(tab);
-			tab->i++;
+			tab->i -= 1;
 		}
 		else
 		{
 			while (tab->formats[tab->i] != '%' && tab->formats[tab->i])
-			{
-				write(1, &tab->formats[tab->i++], 1);
-				tab->len++;
-			}
+				writer(tab);
 			tab->i -= 1;
 		}
 		tab_reinitializer(tab);
-			printf("\n%ld\n", tab->i);
-
 		tab->i++;
 	}
 	return (tab);

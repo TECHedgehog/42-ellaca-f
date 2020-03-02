@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 17:08:38 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 10:40:15 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/03/02 15:14:29 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,13 +31,13 @@ int		ft_printf(const char *formats, ...)
 	return (tab->len);
 }
 
-int main (void)
+/*int main (void)
 {
 	//ft_printf("hola");
 	// int i = 22;
 	//printf("%d\n", ft_printf("%d", i));
-	ft_printf("%dHOla", -5684);
+	ft_printf("%4i", 17);
 	//printf("\n");
 	//printf("%d\n", printf("%05d", 23));
 	return (0);
-}
+}*/
