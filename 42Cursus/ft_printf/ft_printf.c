@@ -36,8 +36,8 @@ int		ft_printf(const char *formats, ...)
 	//ft_printf("hola");
 	// int i = 22;
 	//printf("%d\n", ft_printf("%d", i));
-	ft_printf("%4i", 17);
-	//printf("\n");
+	ft_printf("this %d number", -267);
+	//printf("%d", 17);
 	//printf("%d\n", printf("%05d", 23));
 	return (0);
 }*/

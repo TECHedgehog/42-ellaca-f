@@ -13,6 +13,36 @@
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
+/*int		processor_di_malloc(t_tab *tab, char *str, int n)
+{
+	if (n < 0)
+	{
+		if (!(str = (char*)malloc(sizeof(tab->j + 2))))
+			return (0);
+		str[tab->j + 1] = '\0';
+		tab->j = 0;
+		str[tab->j++] = '-';
+	}
+	else
+	{
+		if (!(str = (char*)malloc(sizeof(tab->j + 1))))
+			return (0);
+		str[tab->j] = '\0';
+	}
+	return (1);
+}*/
+
+/*void	processor_di_init(t_tab *tab, long int *nb, long int exp)
+{
+	while (nb[0] > 0 || nb[1] == 0)
+	{
+		nb[0] /= 10;
+		exp *= 10;
+		nb[1] += 2;
+		tab->j++;
+	}
+}*/
+
 char	*processor_di(t_tab *tab)
 {
 	char		*str;
@@ -24,7 +54,6 @@ char	*processor_di(t_tab *tab)
 	exp = 1;
 	k = 0;
 	n = va_arg(tab->punt_arg, int);
-	tab->is_negative = (n < 0) ? 1 : 0;
 	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
 	nb[1] = (long)nb[0];
 	while (nb[0] > 0 || nb[1] == 0)
@@ -35,18 +64,30 @@ char	*processor_di(t_tab *tab)
 		k++;
 	}
 	tab->j = k;
-	if (!(str = (char*)malloc(sizeof(k + 1))))
-		return (0);
-	str[k] = '\0';
+	// if (!(processor_di_malloc(tab, str, n)))
+		// return (0);
+	if (n < 0)
+	{
+		if (!(str = (char*)malloc(sizeof(k + 2))))
+			return (0);
+		str[k + 1] = '\0';
+		k = 0;
+		str[k] = '-';
+	}
+	else
+	{
+		if (!(str = (char*)malloc(sizeof(k + 1))))
+			return (0);
+		str[k] = '\0';
+	}
 	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
 	exp /= 10;
-	k = 0;
+	k = (n < 0) ? 1 : 0;
 	while (exp > 0)
 	{
 		str[k] = nb[0] / exp % 10 + 48;
 		exp /= 10;
 		k++;
 	}
-	tab->sp_di = 1;
 	return (str);
 }

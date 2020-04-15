@@ -14,11 +14,21 @@
 
 t_tab	*tab_reinitializer(t_tab *tab)
 {
-	tab->flag_minus = 0;
-	tab->flag_zero = 0;
+	tab->sp_di = 0;
+	tab->sp_x = 0;
+	tab->sp_c = 0;
+	tab->sp_p = 0;
+	tab->sp_u = 0;
+	tab->sp_s = 0;
+	tab->flags_on = 0;
+	tab->flag_minus = -1;
+	tab->flag_zero = -1;
+	tab->flag_precision_pos = -1;
 	tab->flag_precision = 0;
-	tab->flag_star = 0;
+	tab->flag_star = -1;
 	tab->flag_width = 0;
 	tab->j = 0;
+	tab->is_negative = 0;
+	tab->s_flags = NULL;
 	return (tab);
 }

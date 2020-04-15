@@ -3,17 +3,17 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2020/02/25 00:34:18 by marvin            #+#    #+#              #
-#    Updated: 2020/02/25 00:34:18 by marvin           ###   ########.fr        #
+#    Created: 2020/04/08 11:39:19 by ellaca-f          #+#    #+#              #
+#    Updated: 2020/04/08 11:39:19 by ellaca-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		libftprintf.a
 LIBFT_A = 	libft.a
 
-COMP =		gcc -Wall -Werror -Wextra $(PRINTF_H) $(LIBFT_H) -c -o
+COMP =		gcc -Wall -Wextra $(PRINTF_H) $(LIBFT_H) -c -o
 
 PRINTF_H = 	-I ./
 LIBFT_H =	-I libft/
@@ -30,7 +30,7 @@ CFILE =		ft_printf.c \
 			processor_specs.c \
 			processor_di.c \
 			printer.c \
-			f_width_treatment.c \
+			flags_treatment_di.c \
 
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 

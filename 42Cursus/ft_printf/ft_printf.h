@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:47:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 17:59:34 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/08 11:38:45 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,22 @@ typedef struct	s_tab
 	size_t		j;
 	size_t		k;
 	char		*specifiers;
+	int			sp_di;
+	int			sp_x;
+	int			sp_c;
+	int			sp_p;
+	int			sp_u;
+	int			sp_s;
 	char		*punt_spec;
 	char		*flags;
+	int			flags_on;
 	int			flag_minus;
 	int			flag_zero;
+	int			flag_precision_pos;
 	int			flag_precision;
 	int			flag_star;
 	int			flag_width;
+	int			is_negative;
 }				t_tab;
 
 int				ft_printf(const char *formats, ...);
@@ -49,11 +58,10 @@ t_tab			*processor_flags(t_tab *tab);
 t_tab			*processor_specs(t_tab *tab);
 char			*processor_di(t_tab *tab);
 t_tab			*printer(char *str, t_tab *tab);
-/*char			*f_minus_treatment(char *str, t_tab *tab);
-char			*f_zero_treatment(char *str, t_tab *tab);
-char			*f_precision_treatment(char *str, t_tab *tab);
-char			*f_star_treatment(char *str, t_tab *tab);*/
-char			*f_width_treatment(char *str, t_tab *tab);
+char			*flags_treatment_di(char *str, t_tab *tab);
+//char			*di_minus_treatment(char *str, t_tab *tab);
+/*char			*di_precision_treatment(char *str, t_tab *tab);
+char			*di_star_treatment(char *str, t_tab *tab);*/
 /*
 void			processor_x(t_tab *tab);
 void			processor_c(t_tab *tab);

@@ -13,43 +13,34 @@
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-/*char	*f_star_treatment(char *str, t_tab *tab)
+char	*flags_treatment(char *str, t_tab *tab)
 {
-	
+	if (tab->sp_di)
+		str = flags_treatment_di(str, tab);
+	return (str);
 }
 
-char	*f_precision_treatment(char *str, t_tab *tab)
-{
-
-}
-
-char	*f_zero_treatment(char *str, t_tab *tab)
-{
-
-}
-
-char	*f_minus_treatment(char *str, t_tab *tab)
-{
-
-}*/
-
-
-
-t_tab	*printer(char *str, t_tab *tab)
+void	print_it(char *str, t_tab *tab)
 {
 	int i;
 
 	i = 0;
-	if (tab->flag_width > 0)
-		str = f_width_treatment(str, tab);
-	//if (tab->flag_minus >= 0)
-	//	str = f_minus_treatment(str, tab);
 	while (str[i])
 	{
 		write(1, &str[i], 1);
 		tab->len++;
 		i++;
 	}
+}
+
+t_tab	*printer(char *str, t_tab *tab)
+{
+	int i;
+
+	i = 0;
+	if (tab->flags_on || (!tab->flags_on && tab->is_negative))
+		str = flags_treatment(str, tab);
+	print_it(str, tab);
 	free(str);
 	return (tab);
 }

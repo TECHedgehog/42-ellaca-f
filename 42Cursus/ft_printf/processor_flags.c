@@ -23,7 +23,16 @@ t_tab	*processor_flags(t_tab *tab)
 	else if (tab->formats[tab->i] == tab->flags[1])
 		tab->flag_zero = tab->i;
 	else if (tab->formats[tab->i] == tab->flags[2])
-		tab->flag_precision = tab->i;
+		{
+			tab->flag_precision_pos = tab->i;
+			i = tab->i + 1;
+			while (tab->formats[i] >= '0' && tab->formats[i] <= '9')
+			{
+				tab->flag_precision *= 10;
+				tab->flag_precision += (tab->formats[i++] - 48);
+			}
+			tab->i = i - 1;
+		}
 	else if (tab->formats[tab->i] == tab->flags[3])
 		tab->flag_star = tab->i;
 	else if (tab->formats[tab->i] >= '1' &&
@@ -31,7 +40,7 @@ t_tab	*processor_flags(t_tab *tab)
 	{
 		tab->flag_width = tab->formats[tab->i] - 48;
 		i = tab->i + 1;
-		while (tab->formats[i] >= '1' && tab->formats[i] <= '9')
+		while (tab->formats[i] >= '0' && tab->formats[i] <= '9')
 		{
 			tab->flag_width *= 10;
 			tab->flag_width += (tab->formats[i++] - 48);
@@ -39,5 +48,6 @@ t_tab	*processor_flags(t_tab *tab)
 		tab->i = i - 1;
 	}
 	tab->i++;
+	tab->flags_on = 1;
 	return (tab);
 }

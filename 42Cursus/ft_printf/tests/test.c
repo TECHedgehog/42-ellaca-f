@@ -1,7 +1,7 @@
 #include "../ft_printf.h"
 int main()
 {
-	printf("%1i\n", -33);
+	//printf("%1i\n", -33);
 	// char *f = "hola1234";
 	// int i = 0;
 	
@@ -20,6 +20,7 @@ int main()
 	// printf("\najfkd%04%\n");
 	// printf("%.*s\n", 3, "abdefg");
 	// printf("%0555d\n", 19);
+	printf("%d€ cuesta", 529);
 
 	return (0);
 }
