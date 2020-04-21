@@ -31,13 +31,14 @@ int		ft_printf(const char *formats, ...)
 	return (tab->len);
 }
 
-/*int main (void)
-{
+// int main (void)
+// {
 	//ft_printf("hola");
 	// int i = 22;
 	//printf("%d\n", ft_printf("%d", i));
-	ft_printf("this %d number", -267);
+	// ft_printf("%10.5d\n", -216);
 	//printf("%d", 17);
 	//printf("%d\n", printf("%05d", 23));
-	return (0);
-}*/
+	// return (0);
+// }
+
