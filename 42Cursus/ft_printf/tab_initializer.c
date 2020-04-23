@@ -33,7 +33,7 @@ t_tab	*tab_initializer(t_tab *tab)
 	tab->flag_minus = -1;
 	tab->flag_zero = -1;
 	tab->flag_precision_pos = -1;
-	tab->flag_precision = 0;
+	tab->flag_precision = -1;
 	tab->flag_star = -1;
 	tab->flag_width = 0;
 	tab->is_negative = 0;

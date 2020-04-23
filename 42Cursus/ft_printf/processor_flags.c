@@ -19,6 +19,7 @@ t_tab	*processor_prec(t_tab *tab)
 
 	tab->flag_precision_pos = tab->i;
 	i = tab->i + 1;
+	tab->flag_precision = 0;
 	while (tab->formats[i] >= '0' && tab->formats[i] <= '9')
 	{
 		tab->flag_precision *= 10;

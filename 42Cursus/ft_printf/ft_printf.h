@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:47:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/04/08 11:38:45 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/23 22:26:29 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,15 +59,15 @@ t_tab			*processor_specs(t_tab *tab);
 char			*processor_di(t_tab *tab);
 t_tab			*printer(char *str, t_tab *tab);
 char			*flags_treatment_di(char *str, t_tab *tab);
-//char			*di_minus_treatment(char *str, t_tab *tab);
-/*char			*di_precision_treatment(char *str, t_tab *tab);
-char			*di_star_treatment(char *str, t_tab *tab);*/
+char			*noflags_negative(char *str, t_tab *tab);
+char			*di_zero_minus(char *str, t_tab *tab, size_t aux);
+char			*di_width_minus(char *str, t_tab *tab, size_t aux);
+char			*di_prec_minus(char *str, t_tab *tab, size_t aux, size_t index);
 /*
 void			processor_x(t_tab *tab);
 void			processor_c(t_tab *tab);
 void			processor_s(t_tab *tab);
 void			processor_p(t_tab *tab);
 void			processor_u(t_tab *tab);*/
-//int				printer(char *s);
 
 #endif
