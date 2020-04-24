@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:12:45 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/04/23 22:34:42 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/24 09:16:47 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,10 @@ t_tab	*processor_specs(t_tab *tab)
 	if (tab->formats[tab->i] == 'd' ||
 			tab->formats[tab->i] == 'i')
 		printer(processor_di(tab), tab);
-	/*else if (tab->formats[tab->i] == 'X' ||
+	else if (tab->formats[tab->i] == 'X' ||
 				tab->formats[tab->i] == 'x')
-		processor_x(tab);
-	else if (tab->formats[tab->i] == 'c')
+		printer(processor_x(tab), tab);
+	/*else if (tab->formats[tab->i] == 'c')
 		processor_c(tab);
 	else if (tab->formats[tab->i] == 's')
 		processor_s(tab);

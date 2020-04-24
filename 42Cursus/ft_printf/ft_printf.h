@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:47:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/04/23 22:26:29 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/24 10:08:30 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ typedef struct	s_tab
 	const char	*formats;
 	char		*f_copy;
 	char		*s_flags;
+	char		*s_base;
 	va_list		punt_arg;
 	int			len;
 	size_t		i;
@@ -57,15 +58,14 @@ t_tab			*processor(t_tab *tab);
 t_tab			*processor_flags(t_tab *tab);
 t_tab			*processor_specs(t_tab *tab);
 char			*processor_di(t_tab *tab);
+char			*processor_x(t_tab *tab);
 t_tab			*printer(char *str, t_tab *tab);
-char			*flags_treatment_di(char *str, t_tab *tab);
 char			*noflags_negative(char *str, t_tab *tab);
+char			*flags_treatment_di(char *str, t_tab *tab);
 char			*di_zero_minus(char *str, t_tab *tab, size_t aux);
 char			*di_width_minus(char *str, t_tab *tab, size_t aux);
 char			*di_prec_minus(char *str, t_tab *tab, size_t aux, size_t index);
-/*
-void			processor_x(t_tab *tab);
-void			processor_c(t_tab *tab);
+/*void			processor_c(t_tab *tab);
 void			processor_s(t_tab *tab);
 void			processor_p(t_tab *tab);
 void			processor_u(t_tab *tab);*/

@@ -32,6 +32,7 @@ CFILE =		ft_printf.c \
 			printer.c \
 			flags_treatment_di.c \
 			flags_treatment_di_aux.c \
+			processor_x.c \
 
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 

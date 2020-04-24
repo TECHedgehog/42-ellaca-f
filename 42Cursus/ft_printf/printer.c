@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:51:57 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 18:01:06 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/24 10:44:43 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 char	*flags_treatment(char *str, t_tab *tab)
 {
 	if (tab->sp_di)
+		str = flags_treatment_di(str, tab);
+	else if (tab->sp_x)
 		str = flags_treatment_di(str, tab);
 	return (str);
 }

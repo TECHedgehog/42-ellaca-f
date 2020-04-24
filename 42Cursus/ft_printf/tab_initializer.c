@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 17:03:11 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 14:17:14 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/24 10:09:12 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ t_tab	*tab_initializer(t_tab *tab)
 {
 	tab->f_copy = (char *)tab->formats;
 	tab->s_flags = NULL;
+	tab->s_base = "0123456789ABCDEF";
 	tab->len = 0;
 	tab->i = 0;
 	tab->j = 0;
