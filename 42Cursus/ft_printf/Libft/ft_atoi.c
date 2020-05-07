@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 13:42:25 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/21 20:35:12 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/25 16:06:35 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,14 +21,12 @@ static int	ft_isspace(char *str, int i)
 int			ft_atoi(const char *str)
 {
 	unsigned int	i;
-	unsigned int	signcount;
 	int				nb;
 	int				flag;
 
 	flag = 0;
 	nb = 0;
 	i = 0;
-	signcount = 0;
 	while (ft_isspace((char*)str, i))
 		i++;
 	while (str[i] == '+' && str[i + 1] >= '0' && str[i + 1] <= '9')

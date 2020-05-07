@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:59:01 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 13:46:59 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/05/07 10:41:30 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 
 t_tab	*tab_reinitializer(t_tab *tab)
 {
+	tab->sp_on = 0;
 	tab->sp_di = 0;
 	tab->sp_x = 0;
 	tab->sp_c = 0;
@@ -29,6 +30,8 @@ t_tab	*tab_reinitializer(t_tab *tab)
 	tab->flag_width = 0;
 	tab->j = 0;
 	tab->is_negative = 0;
+	tab->is_null = 0;
+	tab->is_null_s = 0;
 	tab->s_flags = NULL;
 	return (tab);
 }

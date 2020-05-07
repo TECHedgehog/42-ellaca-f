@@ -1,19 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   processor_x.c                                      :+:      :+:    :+:   */
+/*   processor_p.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 08:47:27 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/07 13:21:07 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/05/07 13:24:41 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-void	init_x(t_tab *tab, long int n, int *k, long int *nb)
+char	*hex_to_pointer(char *str)
+{
+	char *s;
+	char *point;
+
+	s = str;
+	point = "0x";
+	if (!(str = (char*)malloc(ft_strlen(s) + ft_strlen(point) + 1)))
+		return (0);
+	str = ft_strjoin(point, s);
+	free(s);
+	return (str);
+}
+
+void	init_p(t_tab *tab, long int n, int *k, long int *nb)
 {
 	tab->is_negative = (n < 0) ? 1 : 0;
 	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
@@ -23,7 +37,7 @@ void	init_x(t_tab *tab, long int n, int *k, long int *nb)
 	tab->sp_on++;
 }
 
-void	conv_x(t_tab *tab, long int *nb, int *k, char *str)
+void	conv_p(t_tab *tab, long int *nb, int *k, char *str)
 {
 	int i;
 
@@ -33,17 +47,14 @@ void	conv_x(t_tab *tab, long int *nb, int *k, char *str)
 		str[k[0]++] = tab->s_base[nb[0] % 16];
 		nb[0] /= 16;
 	}
-	if (tab->formats[tab->i] == 'x')
+	while (str[i])
 	{
-		while (str[i])
-		{
-			str[i] = (char)ft_tolower((int)str[i]);
-			i++;
-		}
+		str[i] = (char)ft_tolower((int)str[i]);
+		i++;
 	}
 }
 
-char	*processor_x(t_tab *tab)
+char	*processor_p(t_tab *tab)
 {
 	char		*str;
 	long int	n;
@@ -52,7 +63,7 @@ char	*processor_x(t_tab *tab)
 
 	n = va_arg(tab->punt_arg, long int);
 	tab->is_negative = (n < 0) ? 1 : 0;
-	init_x(tab, n, k, nb);
+	init_p(tab, n, k, nb);
 	while (nb[0] > 0 || nb[1] == 0)
 	{
 		nb[0] /= 10;
@@ -62,8 +73,9 @@ char	*processor_x(t_tab *tab)
 	if (!(str = (char*)ft_calloc(sizeof(k[1]), (k[1] + 1))))
 		return (0);
 	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
-	conv_x(tab, nb, k, str);
+	conv_p(tab, nb, k, str);
 	ft_strrev(str);
-	tab->sp_x = 1;
+	str = hex_to_pointer(str);
+	tab->sp_p = 1;
 	return (str);
 }

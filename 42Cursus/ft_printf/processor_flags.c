@@ -6,14 +6,14 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:06:26 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/03/02 10:22:05 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/25 16:10:47 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-t_tab	*processor_prec(t_tab *tab)
+void	processor_prec(t_tab *tab)
 {
 	int i;
 
@@ -28,7 +28,7 @@ t_tab	*processor_prec(t_tab *tab)
 	tab->i = i - 1;
 }
 
-t_tab	*processor_width(t_tab *tab)
+void	processor_width(t_tab *tab)
 {
 	int i;
 

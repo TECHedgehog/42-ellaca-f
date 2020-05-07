@@ -1,7 +1,7 @@
-#include "../ft_printf.h"
+#include "../../ft_printf.h"
 int main()
 {
-	char *f = "hola1234";
+	/*char *f = "hola1234";
 	int i = 0;
 	
 	write(1, &f[i++], 1);
@@ -18,7 +18,8 @@ int main()
 	printf("%d\n", printf("12345"));
 	printf("\najfkd%04%\n");
 	printf("%.*s\n", 3, "abdefg");
-	printf("%0555d\n", 19);
+	printf("%0555d\n", 19);*/
 
+	printf("%c%c", (char)48, 58);
 	return (0);
 }

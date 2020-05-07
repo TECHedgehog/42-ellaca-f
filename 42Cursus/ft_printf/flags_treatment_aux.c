@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   flags_treatment_di_aux.c                           :+:      :+:    :+:   */
+/*   flags_treatment_aux.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 22:19:43 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/04/23 22:22:12 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/05/06 20:11:40 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*noflags_negative(char *str, t_tab *tab)
 	return (str);
 }
 
-char	*di_zero_minus(char *str, t_tab *tab, size_t aux)
+char	*zero_minus(char *str, t_tab *tab, size_t aux)
 {
 	while (tab->flag_width > 0)
 	{
@@ -48,7 +48,7 @@ char	*di_zero_minus(char *str, t_tab *tab, size_t aux)
 	return (str);
 }
 
-char	*di_width_minus(char *str, t_tab *tab, size_t aux)
+char	*width_minus(char *str, t_tab *tab, size_t aux)
 {
 	if (tab->flag_minus < 0)
 	{
@@ -66,18 +66,22 @@ char	*di_width_minus(char *str, t_tab *tab, size_t aux)
 		|| (tab->flag_precision < ft_strlen(tab->s_flags)
 		&& tab->flag_precision < 0)))
 		str[tab->j++] = '-';
-	while ((ft_strlen(tab->s_flags) + tab->is_negative) > tab->j)
+	while ((ft_strlen(tab->s_flags) + tab->is_negative + tab->is_null) > tab->j)
 		str[tab->j++] = tab->s_flags[tab->k++];
 	tab->j -= (tab->flag_precision > -1 && tab->is_negative) ? 1 : 0;
 	while (tab->flag_width-- > 0)
 		str[tab->j++] = ' ';
+	tab->flag_width = aux;
 	return (str);
 }
 
-char	*di_prec_minus(char *str, t_tab *tab, size_t aux, size_t index)
+char	*prec_minus(char *str, t_tab *tab, size_t aux, size_t index)
 {
-	while (index-- > 0)
-		str[tab->j++] = '0';
+	if (tab->is_null_s != 5)
+	{
+		while (index-- > 0)
+			str[tab->j++] = '0';
+	}
 	while ((aux + tab->is_negative) > tab->j)
 		str[tab->j++] = tab->s_flags[tab->k++];
 	return (str);

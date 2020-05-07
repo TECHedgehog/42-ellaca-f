@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/12 12:44:56 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/04/24 10:27:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/04/29 17:29:05 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,7 @@ char			*ft_strrchr(const char *s, int c);
 int				ft_strcmp(const char *s1, const char *s2);
 int				ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t			ft_strlcpy(char *dst, const char *src, size_t dstsize);
+char			*ft_strcpy(char *dst, const char *src);
 size_t			ft_strlcat(char *dst, const char *src, size_t dstsize);
 char			*ft_strnstr(const char *hstack, const char *ndle, size_t len);
 int				ft_atoi(const char *str);

@@ -13,7 +13,7 @@
 NAME = 		libftprintf.a
 LIBFT_A = 	libft.a
 
-COMP =		gcc -Wall -Wextra $(PRINTF_H) $(LIBFT_H) -c -o
+COMP =		gcc -Wall -Wextra -g $(PRINTF_H) $(LIBFT_H) -c -o
 
 PRINTF_H = 	-I ./
 LIBFT_H =	-I libft/
@@ -30,9 +30,12 @@ CFILE =		ft_printf.c \
 			processor_specs.c \
 			processor_di.c \
 			printer.c \
-			flags_treatment_di.c \
-			flags_treatment_di_aux.c \
+			flags_treatment.c \
+			flags_treatment_aux.c \
 			processor_x.c \
+			processor_c.c \
+			processor_u.c \
+			processor_p.c \
 
 CFIND =		$(CFILE:%=$(SRC_DIR)%)
 
