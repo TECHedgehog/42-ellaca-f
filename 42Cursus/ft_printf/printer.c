@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:51:57 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/07 13:28:04 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/05/14 12:36:11 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,8 +56,10 @@ t_tab	*printer(char *str, t_tab *tab)
 {
 	if ((tab->flags_on || (!tab->flags_on && tab->is_negative)))
 		str = flags_treatment_all(str, tab);
+	if (tab->sp_p && tab->is_null_s == 42)
+		str = hex_to_pointer(tab, str);
 	print_it(str, tab);
-	if (tab->is_null_s == 5)
+	if (tab->is_null_s == 5 || tab->is_null_s == 4)
 		tab->len -= tab->is_null_s;
 	free(str);
 	return (tab);

@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:47:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/07 13:22:00 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/05/14 11:50:41 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,5 +75,6 @@ char			*prec_treatment(char *str, t_tab *tab);
 char			*zero_minus(char *str, t_tab *tab, size_t aux);
 char			*width_minus(char *str, t_tab *tab, size_t aux);
 char			*prec_minus(char *str, t_tab *tab, size_t aux, size_t index);
+char			*hex_to_pointer(t_tab *tab, char *str);
 
 #endif

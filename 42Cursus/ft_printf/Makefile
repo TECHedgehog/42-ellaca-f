@@ -33,7 +33,7 @@ CFILE =		ft_printf.c \
 			flags_treatment.c \
 			flags_treatment_aux.c \
 			processor_x.c \
-			processor_c.c \
+			processor_cs.c \
 			processor_u.c \
 			processor_p.c \
 
