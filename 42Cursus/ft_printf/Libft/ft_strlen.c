@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/05 11:04:32 by ellaca-f          #+#    #+#             */
-/*   Updated: 2019/11/21 20:39:37 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/06/25 15:44:32 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,11 @@
 
 size_t	ft_strlen(const char *s)
 {
-	int i;
+	size_t i;
 
 	i = 0;
+	if (s == NULL)
+		return (i);
 	while (s[i] != '\0')
 		i++;
 	return (i);

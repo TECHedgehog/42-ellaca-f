@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:06:26 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/04/25 16:10:47 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/07/01 19:01:51 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,21 @@ void	processor_prec(t_tab *tab)
 		tab->flag_precision += (tab->formats[i++] - 48);
 	}
 	tab->i = i - 1;
+}
+
+void	processor_star(t_tab *tab)
+{
+	int		i;
+
+	i = va_arg(tab->punt_arg, int);
+	tab->flag_minus = (i < 0) ? 1 : tab->flag_minus;
+	if (tab->formats[tab->i - 1] == '.')
+		tab->flag_precision = (i >= 0) ? i : -1;
+	else
+	{
+		tab->flag_width = (i < 0) ? i * -1 : i;
+		tab->flag_zero = (i < 0) ? -1 : tab->flag_zero;
+	}
 }
 
 void	processor_width(t_tab *tab)
@@ -51,7 +66,7 @@ t_tab	*processor_flags(t_tab *tab)
 	else if (tab->formats[tab->i] == tab->flags[2])
 		processor_prec(tab);
 	else if (tab->formats[tab->i] == tab->flags[3])
-		tab->flag_star = tab->i;
+		processor_star(tab);
 	else if (tab->formats[tab->i] >= '1' &&
 			tab->formats[tab->i] <= '9')
 		processor_width(tab);

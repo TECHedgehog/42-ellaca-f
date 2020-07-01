@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/23 22:19:43 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/06 20:11:40 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/06/25 14:35:44 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*width_minus(char *str, t_tab *tab, size_t aux)
 		while (tab->flag_width-- > 0)
 			str[tab->j++] = ' ';
 		if (tab->is_negative && (tab->flag_precision < 0
-			|| (tab->flag_precision < ft_strlen(tab->s_flags)
+			|| (tab->flag_precision < (int)ft_strlen(tab->s_flags)
 			&& tab->flag_precision < 0)))
 			str[tab->j++] = '-';
 		while (aux > tab->j)
@@ -63,7 +63,7 @@ char	*width_minus(char *str, t_tab *tab, size_t aux)
 		return (str);
 	}
 	if (tab->is_negative && (tab->flag_precision < 0
-		|| (tab->flag_precision < ft_strlen(tab->s_flags)
+		|| (tab->flag_precision < (int)ft_strlen(tab->s_flags)
 		&& tab->flag_precision < 0)))
 		str[tab->j++] = '-';
 	while ((ft_strlen(tab->s_flags) + tab->is_negative + tab->is_null) > tab->j)

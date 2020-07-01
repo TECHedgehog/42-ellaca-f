@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 08:47:27 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/16 19:37:02 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/06/25 15:13:13 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ char	*p_is_null(t_tab *tab, char *str)
 	return (str);
 }
 
-void	init_p(t_tab *tab, unsigned long int n, int *k, unsigned long int *nb)
+void	init_p(t_tab *tab, long int n, int *k, long int *nb)
 {
 	tab->sp_p = 1;
 	nb[0] = n;
@@ -60,7 +60,7 @@ void	init_p(t_tab *tab, unsigned long int n, int *k, unsigned long int *nb)
 	tab->sp_on++;
 }
 
-void	conv_p(t_tab *tab, unsigned long int *nb, int *k, char *str)
+void	conv_p(t_tab *tab, long int *nb, int *k, char *str)
 {
 	int i;
 
@@ -79,14 +79,14 @@ void	conv_p(t_tab *tab, unsigned long int *nb, int *k, char *str)
 
 char	*processor_p(t_tab *tab)
 {
-	char				*str;
-	unsigned long int	n;
-	unsigned long int	nb[2];
-	int					k[2];
+	char		*str;
+	long int	n;
+	long int	nb[2];
+	int			k[2];
 
-	n = (unsigned long)va_arg(tab->punt_arg, unsigned long int);
+	n = (long)va_arg(tab->punt_arg, long int);
 	init_p(tab, n, k, nb);
-	if (n == NULL)
+	if (n == '\0')
 	{
 		str = p_is_null(tab, str);
 		return (str);
@@ -99,7 +99,7 @@ char	*processor_p(t_tab *tab)
 	}
 	if (!(str = (char*)ft_calloc(sizeof(k[1]), (k[1] + 1))))
 		return (0);
-	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
+	nb[0] = (long)n;
 	conv_p(tab, nb, k, str);
 	ft_strrev(str);
 	str = hex_to_pointer(tab, str);

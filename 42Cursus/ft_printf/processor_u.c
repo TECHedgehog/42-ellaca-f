@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/07 12:53:14 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/16 19:43:15 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/06/25 14:41:07 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,7 +56,7 @@ char	*processor_u(t_tab *tab)
 	if (!(str = (char*)malloc(sizeof(k + 1))))
 		return (0);
 	str[k] = '\0';
-	nb[0] = (n < 0) ? (long)n * -1 : (long)n;
+	nb[0] = (long)n;
 	exp /= 10;
 	conv_u(str, nb, exp);
 	return (str);

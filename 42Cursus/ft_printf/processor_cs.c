@@ -6,14 +6,14 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 10:54:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/07 13:44:56 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/07/01 11:46:58 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
 
-char	*str_is_null(t_tab *tab, char *str, char *c)
+char	*str_is_null(t_tab *tab, char *str)
 {
 	char	*null_str;
 
@@ -35,6 +35,7 @@ char	*activator_strings(t_tab *tab, char *str, char *c)
 	int		s_2;
 
 	str = ft_strcpy(str, c);
+	tab->is_null_s = (c[0] == '\0') ? 1 : 0;
 	s_1 = (tab->flag_width < (int)ft_strlen(str)) ? 1 : 0;
 	s_2 = (!(tab->flag_precision < (int)ft_strlen(str))) ? 1 : 0;
 	tab->sp_s = (tab->flag_precision && tab->flag_width) ? 2 : 1;
@@ -59,11 +60,11 @@ char	*processor_cs(t_tab *tab)
 	if (tab->formats[tab->i] == 's')
 	{
 		c = va_arg(tab->punt_arg, char *);
-		if (!(str = (char*)malloc(sizeof(c))))
+		if (!(str = (char*)malloc(ft_strlen(c) + (size_t)tab->flag_width)))
 			return (NULL);
 		if (c == NULL)
 		{
-			str = str_is_null(tab, str, c);
+			str = str_is_null(tab, str);
 			return (str);
 		}
 		str = activator_strings(tab, str, c);
