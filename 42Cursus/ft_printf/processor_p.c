@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 08:47:27 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/06/25 15:13:13 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/07/03 20:38:41 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,10 +38,10 @@ char	*p_is_null(t_tab *tab, char *str)
 {
 	char *null_p;
 
-	null_p = "(nil)";
-	tab->is_null_s = 4;
+	null_p = "0x0";
+	tab->is_null_s = 3;
 	free(str);
-	if (!(str = (char*)malloc(6)))
+	if (!(str = (char*)malloc(4)))
 		return (NULL);
 	str = ft_strcpy(str, null_p);
 	if (tab->flag_precision == (int)ft_strlen(str)
@@ -75,6 +75,7 @@ void	conv_p(t_tab *tab, long int *nb, int *k, char *str)
 		str[i] = (char)ft_tolower((int)str[i]);
 		i++;
 	}
+	ft_strrev(str);
 }
 
 char	*processor_p(t_tab *tab)
@@ -86,6 +87,7 @@ char	*processor_p(t_tab *tab)
 
 	n = (long)va_arg(tab->punt_arg, long int);
 	init_p(tab, n, k, nb);
+	str = NULL;
 	if (n == '\0')
 	{
 		str = p_is_null(tab, str);
@@ -101,7 +103,6 @@ char	*processor_p(t_tab *tab)
 		return (0);
 	nb[0] = (long)n;
 	conv_p(tab, nb, k, str);
-	ft_strrev(str);
 	str = hex_to_pointer(tab, str);
 	return (str);
 }

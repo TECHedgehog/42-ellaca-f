@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 17:08:38 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/07/01 19:43:06 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/07/03 20:41:13 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,3 +30,9 @@ int		ft_printf(const char *formats, ...)
 	free(tab);
 	return (tab->len);
 }
+
+// int main()
+// {
+// 	ft_printf("%5%");
+// 	return (0);
+// }
