@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 17:42:53 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/08/06 19:59:58 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/06 21:36:43 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*prec_treatment(char *str, t_tab *tab)
 			return (0);
 		if (tab->is_negative)
 			str[0] = '-';
-		str[index] = '\0';
+		str[index + tab->is_negative] = '\0';
 		index -= (tab->sp_s) ? index : (ft_strlen(tab->s_flags));
 		tab->j = (tab->is_negative) ? 1 : 0;
 		str = prec_minus(str, tab, aux, index);
@@ -106,7 +106,7 @@ char	*flags_treatment(char *str, t_tab *tab)
 			&& tab->flag_precision > -1)
 			|| (tab->flag_width > 0 && (tab->flag_precision >= 0
 			&& tab->flag_precision < (int)ft_strlen(str)
-			&& (tab->sp_s || tab->is_null_s == 5))))
+			&& tab->sp_s)))
 		str = width_treatment(str, tab);
 	else if (tab->flag_precision_pos > -1
 			&& tab->flag_precision > -1)

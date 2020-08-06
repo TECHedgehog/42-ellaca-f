@@ -6,28 +6,12 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 10:54:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/07/01 11:46:58 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/06 21:05:25 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include "Libft/libft.h"
-
-char	*str_is_null(t_tab *tab, char *str)
-{
-	char	*null_str;
-
-	null_str = "(null)";
-	tab->is_null_s = 5;
-	free(str);
-	if (!(str = (char*)malloc(7)))
-		return (NULL);
-	str = ft_strcpy(str, null_str);
-	if (tab->flag_precision == (int)ft_strlen(str)
-		&& tab->flag_width > 0)
-		tab->sp_s = 3;
-	return (str);
-}
 
 char	*activator_strings(t_tab *tab, char *str, char *c)
 {
@@ -64,7 +48,7 @@ char	*processor_cs(t_tab *tab)
 			return (NULL);
 		if (c == NULL)
 		{
-			str = str_is_null(tab, str);
+			str = activator_strings(tab, str, "(null)");
 			return (str);
 		}
 		str = activator_strings(tab, str, c);

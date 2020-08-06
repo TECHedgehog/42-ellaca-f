@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 16:12:45 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/08/06 19:59:24 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/06 20:13:49 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ t_tab	*processor_specs(t_tab *tab)
 		printer(processor_cs(tab), tab);
 	else if (tab->formats[tab->i] == '%')
 	{
-		tab->sp_percent++;
+		tab->sp_percent = (tab->flag_minus < 0) ? 0 : 1;
 		printer(flags_treatment(ft_strdup("%"), tab), tab);
 	}
 	tab->i++;

@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/20 11:53:24 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/07/03 16:51:59 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/06 20:22:23 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ t_tab		*processor(t_tab *tab)
 			while (ft_strchr(tab->flags, tab->formats[tab->i])
 					&& tab->formats[tab->i])
 				processor_flags(tab);
-			printer("%", tab);
+			printer(ft_strdup("%"), tab);
 		}
 		else
 		{

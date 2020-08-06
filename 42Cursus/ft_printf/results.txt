@@ -1,0 +1,6 @@
+Test  19 (c_allprintable_width) : FAILED.
+    First line of code: {return test("%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c%2c%3c%4c%1c      expected output : "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   WX Y  Z   ["
+      your output     : "  ! "! #"!$#"!%#"!&#"!'#"!(#"!)#"!*#"!+#"!,#"!-#"!.#"!/#"!0#"!1#"!2#"!3#"!4#"!5#"!6#"!7#"!8#"!9#"!:#"!;#"!<#"!=#"!>#"!?#"!@#"!A#"!B#"!C#"!D#"!E#"!F#"!"
+      expected (nonprintable as hex) : "  !  "   #$ %  &   '( )  *   +, -  .   /0 1  2   34 5  6   78 9  :   ;< =  >   ?@ A  B   CD E  F   GH I  J   KL M  N   OP Q  R   ST U  V   WX Y  Z   ["
+      actual   (nonprintable as hex) : "  ! "! #"!$#"!%#"!&#"!'#"!(#"!)#"!*#"!+#"!,#"!-#"!.#"!/#"!0#"!1#"!2#"!3#"!4#"!5#"!6#"!7#"!8#"!9#"!:#"!;#"!<#"!=#"!>#"!?#"!@#"!A#"!B#"!C#"!D#"!E#"!F#"!"
+
