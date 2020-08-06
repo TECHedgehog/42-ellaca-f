@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/13 10:59:01 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/07 10:41:30 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/06 19:59:09 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_tab	*tab_reinitializer(t_tab *tab)
 	tab->sp_p = 0;
 	tab->sp_u = 0;
 	tab->sp_s = 0;
+	tab->sp_percent = 0;
 	tab->flags_on = 0;
 	tab->flag_minus = -1;
 	tab->flag_zero = -1;

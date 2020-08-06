@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 13:47:22 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/14 11:50:41 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/06 19:58:21 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ typedef struct	s_tab
 	int			sp_p;
 	int			sp_u;
 	int			sp_s;
+	int			sp_percent;
 	char		*punt_spec;
 	char		*flags;
 	int			flags_on;

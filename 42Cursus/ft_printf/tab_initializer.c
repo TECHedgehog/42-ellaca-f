@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 17:03:11 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/07/01 11:55:06 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/06 19:58:46 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@ t_tab	*tab_initializer(t_tab *tab)
 	tab->sp_p = 0;
 	tab->sp_u = 0;
 	tab->sp_s = 0;
+	tab->sp_percent = 0;
 	tab->punt_spec = NULL;
 	tab->is_negative = 0;
 	tab->is_null = 0;
