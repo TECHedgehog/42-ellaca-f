@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 08:47:27 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/07/03 20:38:41 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/11 21:23:02 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ char	*hex_to_pointer(t_tab *tab, char *str)
 	{
 		s = str;
 		point = "0x";
-		if (!(str = (char*)malloc(ft_strlen(s) + ft_strlen(point) + 1)))
-			return (0);
 		str = ft_strjoin(point, s);
 		free(s);
 		return (str);
@@ -99,7 +97,7 @@ char	*processor_p(t_tab *tab)
 		nb[1] -= 2;
 		k[1]++;
 	}
-	if (!(str = (char*)ft_calloc(sizeof(k[1]), (k[1] + 1))))
+	if (!(str = (char*)ft_calloc(sizeof(char), (k[1] + 1))))
 		return (0);
 	nb[0] = (long)n;
 	conv_p(tab, nb, k, str);
