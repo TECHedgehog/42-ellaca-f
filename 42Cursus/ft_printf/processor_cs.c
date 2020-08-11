@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 10:54:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/08/06 21:05:25 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/11 19:51:22 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,7 @@ char	*processor_cs(t_tab *tab)
 		return (str);
 	}
 	n = va_arg(tab->punt_arg, int);
-	if (!(c = (char*)ft_calloc(1, sizeof(char))))
+	if (!(c = (char*)ft_calloc(2, sizeof(char))))
 		return (NULL);
 	c[0] = (char)n;
 	activator_char(tab, c);
