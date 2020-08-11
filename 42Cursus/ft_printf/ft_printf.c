@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/30 17:08:38 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/08/11 20:50:37 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/08/11 21:56:12 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int		ft_printf(const char *formats, ...)
 {
-	t_tab *tab;
-	int aux;
+	t_tab	*tab;
+	int		aux;
 
 	if (!(tab = (t_tab*)malloc(sizeof(t_tab))))
 		return (-1);
@@ -31,10 +31,4 @@ int		ft_printf(const char *formats, ...)
 	aux = tab->len;
 	free(tab);
 	return (aux);
-}
-
-int main ()
-{
-	ft_printf("%p", 1234);
-	return (0);
 }

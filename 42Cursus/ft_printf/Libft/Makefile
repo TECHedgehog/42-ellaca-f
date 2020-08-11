@@ -6,7 +6,7 @@
 #    By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/14 18:44:13 by ellaca-f          #+#    #+#              #
-#    Updated: 2020/04/29 17:29:33 by ellaca-f         ###   ########.fr        #
+#    Updated: 2020/08/11 21:47:49 by ellaca-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME=libft.a
 
 CC=gcc
 
-CFLAGS=-Wall -Wextra -O3
+CFLAGS=-Wall -Wextra -Werror -O3
 
 RM=rm -f
 

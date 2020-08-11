@@ -6,14 +6,14 @@
 #    By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/04/08 11:39:19 by ellaca-f          #+#    #+#              #
-#    Updated: 2020/04/08 11:39:19 by ellaca-f         ###   ########.fr        #
+#    Updated: 2020/08/11 21:47:13 by ellaca-f         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = 		libftprintf.a
 LIBFT_A = 	libft.a
 
-COMP =		gcc -Wall -Wextra -g $(PRINTF_H) $(LIBFT_H) -c -o
+COMP =		gcc -Wall -Wextra -Werror $(PRINTF_H) $(LIBFT_H) -c -o
 
 PRINTF_H = 	-I ./
 LIBFT_H =	-I libft/
