@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/02/24 18:51:57 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/05/14 12:36:11 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/09/10 14:25:38 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,6 +61,8 @@ t_tab	*printer(char *str, t_tab *tab)
 	print_it(str, tab);
 	if (tab->is_null_s == 5 || tab->is_null_s == 4)
 		tab->len -= tab->is_null_s;
+	if (tab->is_null && tab->flag_width <= 0 && tab->flag_precision <= 0)
+		tab->len++;
 	free(str);
 	return (tab);
 }
