@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 17:42:53 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/09/08 19:12:49 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/09/11 11:58:05 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,7 +109,7 @@ char	*flags_treatment(char *str, t_tab *tab)
 			&& tab->flag_precision > -1)
 			|| (tab->flag_width > 0 && (tab->flag_precision >= 0
 			&& tab->flag_precision < (int)ft_strlen(str)
-			&& tab->sp_s)))
+			&& tab->flag_precision <= tab->flag_width && tab->sp_s)))
 		str = width_treatment(str, tab);
 	else if (tab->flag_precision_pos > -1
 			&& tab->flag_precision > -1)

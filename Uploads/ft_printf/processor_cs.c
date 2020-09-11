@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/04/24 10:54:18 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/08/11 19:51:22 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/09/11 12:37:04 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,8 @@ char	*activator_strings(t_tab *tab, char *str, char *c)
 	s_1 = (tab->flag_width < (int)ft_strlen(str)) ? 1 : 0;
 	s_2 = (!(tab->flag_precision < (int)ft_strlen(str))) ? 1 : 0;
 	tab->sp_s = (tab->flag_precision && tab->flag_width) ? 2 : 1;
+	tab->sp_s += (tab->sp_s == 2
+			&& tab->flag_precision > tab->flag_width) ? 1 : 0;
 	tab->flag_width = (s_1 && s_2) ? (int)ft_strlen(str) : tab->flag_width;
 	return (str);
 }
