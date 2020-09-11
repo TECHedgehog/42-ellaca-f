@@ -6,7 +6,7 @@
 /*   By: ellaca-f <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/03/02 17:42:53 by ellaca-f          #+#    #+#             */
-/*   Updated: 2020/09/11 11:58:05 by ellaca-f         ###   ########.fr       */
+/*   Updated: 2020/09/11 14:03:18 by ellaca-f         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ char	*width_treatment(char *str, t_tab *tab)
 		tab->s_flags = str;
 		tab->flag_width = aux - ft_strlen(tab->s_flags);
 		aux += (tab->is_negative
-				&& tab->flag_precision == tab->flag_width) ? 1 : 0;
+				&& tab->flag_precision == (int)aux) ? 1 : 0;
 	}
 	if (!(str = (char*)malloc(aux + 1)))
 		return (0);
@@ -102,7 +102,7 @@ char	*flags_treatment(char *str, t_tab *tab)
 		&& tab->flag_width > (int)ft_strlen(str) + tab->is_negative
 		&& tab->flag_precision_pos < 0 && tab->sp_percent == 0)
 		str = zero_treatment(str, tab);
-	else if (((tab->flag_width > (int)ft_strlen(str) + tab->is_negative)
+	else if (((tab->flag_width >= (int)ft_strlen(str) + tab->is_negative)
 			&& ((tab->flag_precision <= tab->flag_width) || tab->is_null_s
 			|| tab->sp_s))
 			|| (tab->flag_width <= (int)ft_strlen(str) && tab->sp_s == 2
